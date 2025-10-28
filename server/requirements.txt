@@ -9,3 +9,8 @@ passlib[bcrypt]==1.7.4
 PyJWT==2.8.0
 alembic==1.13.3
 python-dotenv==1.0.1
+bcrypt>=4.1.2
+passlib>=1.7.4
+# === Для Argon2 ===
+passlib[argon2]==1.7.4
+argon2-cffi==23.1.0

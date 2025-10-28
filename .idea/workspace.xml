@@ -4,35 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f4f33e-f584-4dae-ad7a-72c830c0587a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/stress_detect.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/cleanup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/local_models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/sync.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/worker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/README_doker" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/schemas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/structure" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/sync.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/structure_ol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_main.http" afterDir="false" />
+    <list default="true" id="09f4f33e-f584-4dae-ad7a-72c830c0587a" name="Changes" comment="start_stress_detect">
+      <change afterPath="$PROJECT_DIR$/env_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/versions/75992657fa7d_create_hypertable_with_user_partitioning.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/migrations/versions/75992657fa7d_create_hypertable_with_user_partitioning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/versions/e876ac262572_add_user_retention_and_retention_trigger.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/migrations/versions/e876ac262572_add_user_retention_and_retention_trigger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/sync.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +33,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AlexKostjuk&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AlexKostjuk/stress_detect.git&quot;,
+    &quot;accountId&quot;: &quot;4cf00cc7-ce5f-4fa4-8420-6ff942db4e9d&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="34YsntAF0g3dRVBsHcXL18YraKj" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -77,6 +72,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -117,11 +117,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1761402009704</updated>
-      <workItem from="1761402010874" duration="6653000" />
+      <workItem from="1761402010874" duration="9790000" />
+      <workItem from="1761647666706" duration="15181000" />
     </task>
+    <task id="LOCAL-00001" summary="start_stress_detect">
+      <option name="closed" value="true" />
+      <created>1761408980860</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1761408980860</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="start_stress_detect" />
+    <option name="LAST_COMMIT_MESSAGE" value="start_stress_detect" />
   </component>
 </project>

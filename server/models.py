@@ -134,6 +134,7 @@ class MLModel(Base):
     model_metadata = Column(JSONB)
 
 
+
 class LoraUpdate(Base):
     __tablename__ = "lora_updates"
 
@@ -146,31 +147,6 @@ class LoraUpdate(Base):
     training_samples = Column(Integer, nullable=False)
     validation_accuracy = Column(Float)
     update_metadata = Column(JSONB)
-
-class UserLabel(Base):
-    __tablename__ = "user_labels"
-
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-
-    # ← ДОБАВЬ: user_id в FK
-    vector_id = Column(BigInteger, nullable=True)
-    vector_timestamp = Column(DateTime(timezone=True), nullable=True)
-    vector_user_id = Column(Integer, nullable=True)  # ← НОВОЕ ПОЛЕ
-
-    label_type = Column(String(50), nullable=False)
-    label_value = Column(String(50), nullable=False)
-    confidence = Column(Float)
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
-    note = Column(String)
-
-    __table_args__ = (
-        ForeignKeyConstraint(
-            ['vector_id', 'vector_timestamp', 'vector_user_id'],
-            ['a_sensor_vectors.id', 'a_sensor_vectors.timestamp', 'a_sensor_vectors.user_id'],
-            ondelete="CASCADE"
-        ),
-    )
 
 class TrainingSession(Base):
     __tablename__ = "training_sessions"

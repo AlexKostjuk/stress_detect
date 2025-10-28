@@ -18,46 +18,68 @@ branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 
 
+from alembic import op
+import sqlalchemy as sa
+
+
 def upgrade():
-    # Создаём hypertable с партиционированием
+    # === 2. Заполняем FREE по умолчанию ===
     op.execute("""
-        SELECT create_hypertable(
-            'a_sensor_vectors',
-            'timestamp',
-            partitioning_column => 'user_id',
-            number_partitions => 4
+        INSERT INTO user_retention (user_id, retention_days)
+        SELECT id, 60 FROM users
+        ON CONFLICT (user_id) DO NOTHING;
+    """)
+
+    # === 3. Создаём триггер-функцию ===
+    op.execute("""
+        CREATE OR REPLACE FUNCTION update_user_retention()
+        RETURNS TRIGGER AS $$
+        BEGIN
+            IF NEW.user_type = 'premium' THEN
+                NEW.retention_days := 365;
+            ELSE
+                NEW.retention_days := 60;
+            END IF;
+            RETURN NEW;
+        END;
+        $$ LANGUAGE plpgsql;
+    """)
+
+    # === 4. Триггер на UPDATE user_type ===
+    op.execute("""
+        CREATE TRIGGER trigger_update_retention
+        BEFORE UPDATE OF user_type ON users
+        FOR EACH ROW
+        EXECUTE FUNCTION update_user_retention();
+    """)
+
+    # === 5. Триггер на INSERT ===
+    op.execute("""
+        CREATE TRIGGER trigger_insert_retention
+        BEFORE INSERT ON users
+        FOR EACH ROW
+        EXECUTE FUNCTION update_user_retention();
+    """)
+
+    # === 6. Удаляем старую retention policy (если была) ===
+    op.execute("SELECT remove_retention_policy('a_sensor_vectors');")
+
+    # === 7. Добавляем динамическую политику через job (TimescaleDB) ===
+    op.execute("""
+        SELECT add_retention_policy('a_sensor_vectors', INTERVAL '1 day');
+    """)
+
+    # === 8. Создаём job для ежедневной проверки ===
+    op.execute("""
+        SELECT alter_job(
+            (SELECT job_id FROM timescaledb_information.jobs WHERE proc_name = 'policy_retention'),
+            schedule_interval => INTERVAL '1 day'
         );
     """)
-
-    # Индексы (опционально, но полезно)
-    op.execute("""
-        CREATE INDEX IF NOT EXISTS ix_sensor_vectors_device_timestamp 
-        ON a_sensor_vectors (device_id, timestamp DESC);
-    """)
-
-    # Включаем сжатие (compression)
-    op.execute("""
-        ALTER TABLE a_sensor_vectors SET (
-            timescaledb.compress,
-            timescaledb.compress_segmentby = 'user_id',
-            timescaledb.compress_orderby = 'timestamp DESC'
-        );
-    """)
-
-    # Политика сжатия: сжимать чанки старше 7 дней
-    op.execute("""
-        SELECT add_compression_policy('a_sensor_vectors', INTERVAL '7 days');
-    """)
-
-    # Политика удаления: удалять данные старше 60 дней (FREE)
-    op.execute("""
-        SELECT add_retention_policy('a_sensor_vectors', INTERVAL '60 days');
-    """)
-
 
 def downgrade():
-    # Отключаем политики
     op.execute("SELECT remove_retention_policy('a_sensor_vectors');")
-    op.execute("SELECT remove_compression_policy('a_sensor_vectors');")
-    # Удаляем hypertable
-    op.execute("SELECT drop_hypertable('a_sensor_vectors');")
+    op.execute("DROP TRIGGER IF EXISTS trigger_update_retention ON users;")
+    op.execute("DROP TRIGGER IF EXISTS trigger_insert_retention ON users;")
+    op.execute("DROP FUNCTION IF EXISTS update_user_retention();")
+    op.drop_table('user_retention')

@@ -7,6 +7,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     gcc \
     postgresql-client \
+    libffi-dev \
+    libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Копируем requirements.txt ИЗ server/

@@ -10,7 +10,7 @@ from auth import verify_token
 
 router = APIRouter()
 
-@router.post("/sync")
+@router.post("/")
 async def sync_vectors(
     vectors: List[SensorVectorSync],
     db: AsyncSession = Depends(get_db),

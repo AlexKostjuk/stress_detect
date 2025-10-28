@@ -8,8 +8,8 @@ from sync import router as sync_router  # ← УБЕДИСЬ, ЧТО sync.py С�
 app = FastAPI(title="Health Monitor API")
 
 # Подключаем роутеры
-app.include_router(auth_router)
-app.include_router(sync_router)
+app.include_router(auth_router, prefix="/auth")
+app.include_router(sync_router, prefix="/sync")
 
 @app.on_event("startup")
 async def startup():
