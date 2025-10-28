@@ -12,3 +12,92 @@ Internal Server Error
 
 
 ошибка в докере self._handle_dbapi_exception( File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception raise sqlalchemy_exception.with_traceback(exc_info[2]) from e File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context self.dialect.do_execute( File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute cursor.execute(statement, parameters) File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 568, in execute self.adapt_connection.await( File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only return current.parent.switch(awaitable) # type: ignore[no-any-return,attr-defined] # noqa: E501 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn value = await result ^^^^^^^^^^^^ File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 546, in _prepare_and_execute self._handle_exception(error) File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 497, in _handle_exception self._adapt_connection._handle_exception(error) File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 780, in _handle_exception raise translated_error from error sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: record "new" has no field "retention_days" [SQL: INSERT INTO users (username, email, hashed_password, user_type, subscription_end, is_active) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::TIMESTAMP WITH TIME ZONE, $6::BOOLEAN) RETURNING users.id, users.created_at, users.updated_at] [parameters: ('test_free', 'free@ex.com', '$argon2id$v=19$m=65536,t=3,p=4$B8DYe2/NOaf0vnfOeW9tzQ$ACzUK2D789FuiRAgTNfHkjwZMhVpQFE0hEhAk4UruDk', 'free', None, True)] (Background on this error at: https://sqlalche.me/e/20/f405)
+
+
+
+migration versions old
+"""create hypertable with user partitioning
+
+Revision ID: 75992657fa7d
+Revises: e876ac262572
+Create Date: 2025-10-25 18:08:46.082218
+
+"""
+from typing import Sequence, Union
+
+from alembic import op
+import sqlalchemy as sa
+
+
+# revision identifiers, used by Alembic.
+revision: str = '75992657fa7d'
+down_revision: Union[str, None] = 'e876ac262572'
+branch_labels: Union[str, Sequence[str], None] = None
+depends_on: Union[str, Sequence[str], None] = None
+
+
+from alembic import op
+import sqlalchemy as sa
+
+
+def upgrade():
+    # === 2. Заполняем FREE по умолчанию ===
+    op.execute("""
+        INSERT INTO user_retention (user_id, retention_days)
+        SELECT id, 60 FROM users
+        ON CONFLICT (user_id) DO NOTHING;
+    """)
+
+    # === 3. Создаём триггер-функцию ===
+    op.execute("""
+        CREATE OR REPLACE FUNCTION update_user_retention()
+        RETURNS TRIGGER AS $$
+        BEGIN
+            IF NEW.user_type = 'premium' THEN
+                NEW.retention_days := 365;
+            ELSE
+                NEW.retention_days := 60;
+            END IF;
+            RETURN NEW;
+        END;
+        $$ LANGUAGE plpgsql;
+    """)
+
+    # === 4. Триггер на UPDATE user_type ===
+    op.execute("""
+        CREATE TRIGGER trigger_update_retention
+        BEFORE UPDATE OF user_type ON users
+        FOR EACH ROW
+        EXECUTE FUNCTION update_user_retention();
+    """)
+
+    # === 5. Триггер на INSERT ===
+    op.execute("""
+        CREATE TRIGGER trigger_insert_retention
+        BEFORE INSERT ON users
+        FOR EACH ROW
+        EXECUTE FUNCTION update_user_retention();
+    """)
+
+    # === 6. Удаляем старую retention policy (если была) ===
+    op.execute("SELECT remove_retention_policy('a_sensor_vectors');")
+
+    # === 7. Добавляем динамическую политику через job (TimescaleDB) ===
+    op.execute("""
+        SELECT add_retention_policy('a_sensor_vectors', INTERVAL '1 day');
+    """)
+
+    # === 8. Создаём job для ежедневной проверки ===
+    op.execute("""
+        SELECT alter_job(
+            (SELECT job_id FROM timescaledb_information.jobs WHERE proc_name = 'policy_retention'),
+            schedule_interval => INTERVAL '1 day'
+        );
+    """)
+
+def downgrade():
+    op.execute("SELECT remove_retention_policy('a_sensor_vectors');")
+    op.execute("DROP TRIGGER IF EXISTS trigger_update_retention ON users;")
+    op.execute("DROP TRIGGER IF EXISTS trigger_insert_retention ON users;")
+    op.execute("DROP FUNCTION IF EXISTS update_user_retention();")
+    op.drop_table('user_retention')

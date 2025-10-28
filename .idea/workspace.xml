@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f4f33e-f584-4dae-ad7a-72c830c0587a" name="Changes" comment="start_stress_detect_add_user_not_work">
-      <change afterPath="$PROJECT_DIR$/server/eroor" afterDir="false" />
+    <list default="true" id="09f4f33e-f584-4dae-ad7a-72c830c0587a" name="Changes" comment="start_stress_detect_add_user_not_work_eroor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/eroor" beforeDir="false" afterPath="$PROJECT_DIR$/server/eroor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/versions/75992657fa7d_create_hypertable_with_user_partitioning.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/migrations/versions/75992657fa7d_create_hypertable_with_user_partitioning.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1761402009704</updated>
       <workItem from="1761402010874" duration="9790000" />
-      <workItem from="1761647666706" duration="17222000" />
+      <workItem from="1761647666706" duration="18971000" />
     </task>
     <task id="LOCAL-00001" summary="start_stress_detect">
       <option name="closed" value="true" />
@@ -127,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761663069909</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="start_stress_detect_add_user_not_work_eroor">
+      <option name="closed" value="true" />
+      <created>1761674209293</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761674209293</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +145,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start_stress_detect" />
     <MESSAGE value="start_stress_detect_add_user_not_work" />
-    <option name="LAST_COMMIT_MESSAGE" value="start_stress_detect_add_user_not_work" />
+    <MESSAGE value="start_stress_detect_add_user_not_work_eroor" />
+    <option name="LAST_COMMIT_MESSAGE" value="start_stress_detect_add_user_not_work_eroor" />
   </component>
 </project>

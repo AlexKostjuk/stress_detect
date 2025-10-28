@@ -1,0 +1,53 @@
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+
+    self._handle_dbapi_exception(
+
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+
+    self.dialect.do_execute(
+
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+
+    cursor.execute(statement, parameters)
+
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 568, in execute
+
+    self._adapt_connection.await_(
+
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+
+    value = await result
+
+            ^^^^^^^^^^^^
+
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 546, in _prepare_and_execute
+
+    self._handle_exception(error)
+
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 497, in _handle_exception
+
+    self._adapt_connection._handle_exception(error)
+
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 780, in _handle_exception
+
+    raise translated_error from error
+
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "user_retention_pkey"
+
+DETAIL:  Key (user_id)=(1) already exists.
+
+[SQL: INSERT INTO user_retention (user_id, retention_days) VALUES ($1::INTEGER, $2::INTEGER) RETURNING user_retention.updated_at]
+
+[parameters: (1, 60)]
+
+(Background on this error at: https://sqlalche.me/e/20/gkpj)⁠
