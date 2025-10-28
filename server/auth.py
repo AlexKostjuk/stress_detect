@@ -93,13 +93,13 @@ async def register(user_data: UserCreate, db: AsyncSession = Depends(get_db)):
     await db.commit()
     await db.refresh(new_user)
 
-    # ← ДОБАВЛЯЕМ user_retention ПОСЛЕ commit()!
-    retention = UserRetention(
-        user_id=new_user.id,
-        retention_days=365 if user_data.user_type == "premium" else 60
-    )
-    db.add(retention)  # ← ЭТО БЫЛО ПРОПУЩЕНО!
-    await db.commit()  # ← Второй commit
+    # # ← ДОБАВЛЯЕМ user_retention ПОСЛЕ commit()!
+    # retention = UserRetention(
+    #     user_id=new_user.id,
+    #     retention_days=365 if user_data.user_type == "premium" else 60
+    # )
+    # db.add(retention)  # ← ЭТО БЫЛО ПРОПУЩЕНО!
+    # await db.commit()  # ← Второй commit
 
     # JWT
     access_token = create_access_token({"sub": new_user.username})

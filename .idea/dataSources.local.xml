@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="PY-252.26199.168">
+    <data-source name="health_monitor@localhost" uuid="4e3242b0-fdc9-46ef-9993-46a6e8ec75bf">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>health_user</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
