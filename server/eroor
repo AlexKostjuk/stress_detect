@@ -1,0 +1,14 @@
+ docker-compose down -v
+  docker-compose build --no-cache api
+   docker-compose up -d
+    docker-compose exec api alembic upgrade head
+
+
+
+у меня проблемы сразвертыванием базы в докере при таком (.venv) PS C:\Users\vlvov\PycharmProjects\stress_detect> curl.exe -X POST http://localhost:8000/auth/register `
+-H "Content-Type: application/json" `
+-d '{"username":"test_free","email":"free@ex.com","password":"123"}'
+Internal Server Error
+
+
+ошибка в докере self._handle_dbapi_exception( File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception raise sqlalchemy_exception.with_traceback(exc_info[2]) from e File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context self.dialect.do_execute( File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute cursor.execute(statement, parameters) File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 568, in execute self.adapt_connection.await( File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only return current.parent.switch(awaitable) # type: ignore[no-any-return,attr-defined] # noqa: E501 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn value = await result ^^^^^^^^^^^^ File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 546, in _prepare_and_execute self._handle_exception(error) File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 497, in _handle_exception self._adapt_connection._handle_exception(error) File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 780, in _handle_exception raise translated_error from error sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: record "new" has no field "retention_days" [SQL: INSERT INTO users (username, email, hashed_password, user_type, subscription_end, is_active) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::TIMESTAMP WITH TIME ZONE, $6::BOOLEAN) RETURNING users.id, users.created_at, users.updated_at] [parameters: ('test_free', 'free@ex.com', '$argon2id$v=19$m=65536,t=3,p=4$B8DYe2/NOaf0vnfOeW9tzQ$ACzUK2D789FuiRAgTNfHkjwZMhVpQFE0hEhAk4UruDk', 'free', None, True)] (Background on this error at: https://sqlalche.me/e/20/f405)
