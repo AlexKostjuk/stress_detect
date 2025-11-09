@@ -1,63 +1,61 @@
 # client/sync.py
 import requests
-from .db import get_db
-from .local_models import SensorVector
-from sqlalchemy import delete
+import json
+from PyQt6.QtWidgets import QApplication
+from client.local_db import get_db
+from client.local_models import SensorVector
 
-def sync_to_cloud(jwt_token: str, api_url: str = "http://localhost:8000/sync"):
-    headers = {"Authorization": f"Bearer {jwt_token}"}
+def _get_window():
+    app = QApplication.instance()
+    if app and app.activeWindow():
+        from client.main import HealthClient
+        if isinstance(app.activeWindow(), HealthClient):
+            return app.activeWindow()
+    return None
+
+def sync_to_server(jwt: str, url: str = "http://host.docker.internal:8000/sync/"):
+    headers = {"Authorization": f"Bearer {jwt}"}
     db = next(get_db())
     try:
         vectors = db.query(SensorVector).all()
+        if not vectors:
+            return "Нет данных для отправки"
+
         data = []
         for v in vectors:
-            item = {
-                "id": v.id,
-                "user_id": v.user_id,
-                "device_id": v.device_id,
-                "timestamp": v.timestamp.isoformat() if v.timestamp else None,
-                "heart_rate": v.heart_rate,
-                "hrv_rmssd": v.hrv_rmssd,
-                "hrv_sdnn": v.hrv_sdnn,
-                "spo2": v.spo2,
-                "skin_temperature": v.skin_temperature,
-                "accel_x": v.accel_x,
-                "accel_y": v.accel_y,
-                "accel_z": v.accel_z,
-                "gyro_x": v.gyro_x,
-                "gyro_y": v.gyro_y,
-                "gyro_z": v.gyro_z,
-                "steps_count": v.steps_count,
-                "noise_level_db": v.noise_level_db,
-                "breathing_rate": v.breathing_rate,
-                "activity_type": v.activity_type,
-                "location_type": v.location_type,
-                "battery_level": v.battery_level,
-                "stress_level": v.stress_level,
-                "energy_level": v.energy_level,
-                "focus_level": v.focus_level,
-                "model_version": v.model_version,
-                "confidence_score": v.confidence_score,
-                "raw_features": v.raw_features,
-                "lora_weights": v.lora_weights,
-                "signal_quality": v.signal_quality,
-            }
+            item = {c.name: getattr(v, c.name) for c in v.__table__.columns}
+            if item.get("timestamp"):
+                item["timestamp"] = item["timestamp"].isoformat()
+            if item.get("created_at"):
+                item["created_at"] = item["created_at"].isoformat()
             data.append(item)
 
-        if not data:
-            print("[SYNC] Нет данных для синхронизации")
-            return
+        # Показываем в терминале
+        win = _get_window()
+        if win:
+            win.log(f"Отправка {len(data)} записей...", "DATA")
+            preview = json.dumps(data, ensure_ascii=False, indent=2)
+            if len(preview) > 1500:
+                preview = preview[:1500] + "\n... (ещё данные)"
+            win.log(preview, "DATA")
 
-        response = requests.post(api_url, json=data, headers=headers)
-        if response.status_code == 200:
-            # Удалить после успешной отправки
-            stmt = delete(SensorVector)  # ← ПРАВИЛЬНО
-            db.execute(stmt)
+        r = requests.post(url, json=data, headers=headers, timeout=15)
+        if r.status_code == 200:
+            count = r.json().get("count", len(data))
+            db.query(SensorVector).delete()
             db.commit()
-            print(f"[SYNC] Успешно отправлено и удалено {len(data)} записей")
+            result = f"Успешно синхронизировано {count} записей"
+            if win:
+                win.log(result, "SUCCESS")
+            return result
         else:
-            print(f"[SYNC] Ошибка: {response.status_code} {response.text}")
+            error = f"Ошибка сервера: {r.status_code} {r.text}"
+            if win:
+                win.log(error, "ERROR")
+            return error
     except Exception as e:
-        print(f"[ERROR] Синхронизация: {e}")
+        if win:
+            win.log(f"Исключение: {e}", "ERROR")
+        return f"Ошибка: {e}"
     finally:
         db.close()
