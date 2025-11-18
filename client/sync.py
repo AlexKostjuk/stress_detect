@@ -1,4 +1,3 @@
-# client/sync.py
 import requests
 import json
 from PyQt6.QtWidgets import QApplication
@@ -14,48 +13,48 @@ def _get_window():
     return None
 
 def sync_to_server(jwt: str, url: str = "http://host.docker.internal:8000/sync/"):
-    headers = {"Authorization": f"Bearer {jwt}"}
-    db = next(get_db())
-    try:
-        vectors = db.query(SensorVector).all()
-        if not vectors:
-            return "Нет данных для отправки"
+    headers = {
+        "Authorization": f"Bearer {jwt}",
+        "Content-Type": "application/json"
+    }
 
-        data = []
-        for v in vectors:
-            item = {c.name: getattr(v, c.name) for c in v.__table__.columns}
-            if item.get("timestamp"):
-                item["timestamp"] = item["timestamp"].isoformat()
-            if item.get("created_at"):
-                item["created_at"] = item["created_at"].isoformat()
-            data.append(item)
+    with get_db() as db:
+        try:
+            vectors = db.query(SensorVector).all()
+            if not vectors:
+                return "Нет данных для отправки"
 
-        # Показываем в терминале
-        win = _get_window()
-        if win:
-            win.log(f"Отправка {len(data)} записей...", "DATA")
-            preview = json.dumps(data, ensure_ascii=False, indent=2)
-            if len(preview) > 1500:
-                preview = preview[:1500] + "\n... (ещё данные)"
-            win.log(preview, "DATA")
+            data = []
+            for v in vectors:
+                item = {c.name: getattr(v, c.name) for c in v.__table__.columns}
+                data.append(item)
 
-        r = requests.post(url, json=data, headers=headers, timeout=15)
-        if r.status_code == 200:
-            count = r.json().get("count", len(data))
-            db.query(SensorVector).delete()
-            db.commit()
-            result = f"Успешно синхронизировано {count} записей"
+            win = _get_window()
             if win:
-                win.log(result, "SUCCESS")
-            return result
-        else:
-            error = f"Ошибка сервера: {r.status_code} {r.text}"
+                win.log(f"Отправка {len(data)} записей...", "DATA")
+                preview = json.dumps(data, default=str, ensure_ascii=False, indent=2)
+                if len(preview) > 1500:
+                    preview = preview[:1500] + "\n... (ещё данные)"
+                win.log(preview, "DATA")
+
+            # ✅ сериализуем вручную, чтобы datetime не ломал JSON
+            payload = json.dumps(data, default=str)
+            r = requests.post(url, data=payload, headers=headers, timeout=15)
+
+            if r.status_code == 200:
+                count = r.json().get("count", len(data))
+                result = f"Успешно синхронизировано {count} записей"
+                if win:
+                    win.log(result, "SUCCESS")
+                return result
+            else:
+                error = f"Ошибка сервера: {r.status_code} {r.text}"
+                if win:
+                    win.log(error, "ERROR")
+                return error
+
+        except Exception as e:
+            win = _get_window()
             if win:
-                win.log(error, "ERROR")
-            return error
-    except Exception as e:
-        if win:
-            win.log(f"Исключение: {e}", "ERROR")
-        return f"Ошибка: {e}"
-    finally:
-        db.close()
+                win.log(f"Исключение: {e}", "ERROR")
+            return f"Ошибка: {e}"

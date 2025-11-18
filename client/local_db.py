@@ -4,6 +4,8 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from .local_models import Base
+from contextlib import contextmanager
+
 
 if getattr(sys, 'frozen', False):
     BASE_DIR = os.path.dirname(sys.executable)
@@ -17,6 +19,14 @@ SessionLocal = sessionmaker(bind=engine, expire_on_commit=False)
 def init_db():
     Base.metadata.create_all(bind=engine)
 
+# def get_db():
+#     db = SessionLocal()
+#     try:
+#         yield db
+#     finally:
+#         db.close()
+
+@contextmanager
 def get_db():
     db = SessionLocal()
     try:

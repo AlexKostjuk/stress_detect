@@ -5,8 +5,19 @@ from sqlalchemy import (
 )
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+import json
+from sqlalchemy.types import TypeDecorator, Text
+
+
 
 Base = declarative_base()
+class JSONEncodedDict(TypeDecorator):
+    impl = Text
+    def process_bind_param(self, value, dialect):
+        return json.dumps(value) if value is not None else None
+    def process_result_value(self, value, dialect):
+        return json.loads(value) if value is not None else None
+
 
 class User(Base):
     __tablename__ = "users"
@@ -44,7 +55,7 @@ class Device(Base):
 class SensorVector(Base):
     __tablename__ = "a_sensor_vectors"
 
-    id = Column(BigInteger, primary_key=False)
+    id = Column(BigInteger, primary_key=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False, index=True)
     device_id = Column(Integer, ForeignKey("devices.id"), nullable=False, index=True)
     timestamp = Column(DateTime(timezone=True), nullable=False, index=True)
@@ -82,8 +93,11 @@ class SensorVector(Base):
     confidence_score = Column(Float)
 
     # Гибкое хранение
-    raw_features = Column(JSON)
-    lora_weights = Column(JSON)
+    raw_features = Column(JSONEncodedDict)
+    lora_weights = Column(JSONEncodedDict)
+
+    # raw_features = Column(JSON)
+    # lora_weights = Column(JSON)
     signal_quality = Column(Integer)
 
     created_at = Column(DateTime(timezone=True), server_default=func.now())

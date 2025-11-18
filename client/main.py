@@ -16,10 +16,19 @@ from client.local_db import init_db, get_db
 from client.local_models import User, Device, SensorVector
 from client.cleanup import cleanup_old_data
 from client.sync import sync_to_server
+from PyQt6.QtCore import QTimer
+import json, os
+from client.local_db import get_db
+import os
+from PyQt6.QtWidgets import QStackedWidget
+from client.admin_page import UserAdminPage
+
+
 
 class HealthClient(QMainWindow):
     def __init__(self):
         super().__init__()
+
         self.setWindowTitle("Health Monitor Pro")
         self.setGeometry(100, 100, 640, 760)
 
@@ -36,17 +45,34 @@ class HealthClient(QMainWindow):
         self.setup_ui()
         self.start_cleanup_timer()
 
+    def add_admin_page(self):
+        """Функция для подключения скрытой админской страницы"""
+        self.admin_page = UserAdminPage(self.jwt, self.BASE_URL)
+        self.tabs.addTab(self.admin_page, "Админ")
+        self.log("Админская вкладка подключена (DEBUG mode)", "INFO")
+
     def setup_ui(self):
-        tabs = QTabWidget()
-        tabs.addTab(self.auth_tab(), "Авторизация")
-        tabs.addTab(self.monitor_tab(), "Мониторинг")
-        tabs.addTab(self.terminal_tab(), "Терминал")
+        self.tabs = QTabWidget()
+        self.tabs.addTab(self.auth_tab(), "Авторизация")
+        self.tabs.addTab(self.monitor_tab(), "Мониторинг")
+        self.tabs.addTab(self.terminal_tab(), "Терминал")
 
         container = QWidget()
         layout = QVBoxLayout()
-        layout.addWidget(tabs)
+        layout.addWidget(self.tabs)
         container.setLayout(layout)
         self.setCentralWidget(container)
+
+        # tabs = QTabWidget()
+        # tabs.addTab(self.auth_tab(), "Авторизация")
+        # tabs.addTab(self.monitor_tab(), "Мониторинг")
+        # tabs.addTab(self.terminal_tab(), "Терминал")
+        #
+        # container = QWidget()
+        # layout = QVBoxLayout()
+        # layout.addWidget(tabs)
+        # container.setLayout(layout)
+        # self.setCentralWidget(container)
 
     def auth_tab(self):
         w = QWidget()
@@ -127,8 +153,23 @@ class HealthClient(QMainWindow):
         w.setLayout(l)
         return w
 
+    # def start_cleanup_timer(self):
+    #     QTimer.singleShot(86400000, cleanup_old_data)
+
     def start_cleanup_timer(self):
-        QTimer.singleShot(86400000, cleanup_old_data)
+        self.cleanup_timer = QTimer()
+        self.cleanup_timer.timeout.connect(cleanup_old_data)
+        self.cleanup_timer.start(86400000)  # каждые 24 часа
+
+    def save_jwt(self):
+        if self.jwt:
+            with open("jwt_token.json", "w") as f:
+                json.dump({"token": self.jwt}, f)
+
+    def load_jwt(self):
+        if os.path.exists("jwt_token.json"):
+            with open("jwt_token.json") as f:
+                self.jwt = json.load(f).get("token")
 
     def log(self, msg: str, level: str = "INFO"):
         colors = {
@@ -139,6 +180,33 @@ class HealthClient(QMainWindow):
         html = f"<span style='color: {colors.get(level, '#d4d4d4')};'>[{t}] [{level}] {msg}</span>"
         self.terminal.append(html)
         self.terminal.moveCursor(QTextCursor.MoveOperation.End)
+
+    # def login(self):
+    #     u, p = self.login_user.text().strip(), self.login_pass.text().strip()
+    #     if not u or not p:
+    #         self.log("Заполните поля", "WARN")
+    #         return
+    #     try:
+    #         r = requests.post(f"{self.BASE_URL}/auth/login", json={"username": u, "password": p}, timeout=10)
+    #         if r.status_code == 200:
+    #             self.jwt = r.json()["access_token"]
+    #             payload = jwt.decode(self.jwt, options={"verify_signature": False})
+    #             self.username = payload.get("sub")
+    #             self.fetch_user_info()
+    #             self.setup_local_user(u)
+    #
+    #             self.start_stop_btn.setEnabled(True)
+    #             self.sync_btn.setEnabled(self.user_type == "premium")
+    #             self.logout_btn.setEnabled(True)
+    #             self.status.setText(f"Пользователь: {u}")
+    #             self.log("Вход успешен", "SUCCESS")
+    #             if os.getenv("DEBUG", "true").lower() == "true":
+    #                 self.add_admin_page()
+    #
+    #         else:
+    #             self.log(f"Ошибка: {r.json().get('detail')}", "ERROR")
+    #     except Exception as e:
+    #         self.log(f"Сервер недоступен: {e}", "ERROR")
 
     def login(self):
         u, p = self.login_user.text().strip(), self.login_pass.text().strip()
@@ -151,14 +219,22 @@ class HealthClient(QMainWindow):
                 self.jwt = r.json()["access_token"]
                 payload = jwt.decode(self.jwt, options={"verify_signature": False})
                 self.username = payload.get("sub")
-                self.fetch_user_info()
-                self.setup_local_user(u)
+
+                # Шаг 2: получаем полную информацию о пользователе
+                user_info = self.fetch_user_info()
+
+                # передаём её в setup_local_user
+                self.setup_local_user(user_info)
 
                 self.start_stop_btn.setEnabled(True)
                 self.sync_btn.setEnabled(self.user_type == "premium")
                 self.logout_btn.setEnabled(True)
                 self.status.setText(f"Пользователь: {u}")
                 self.log("Вход успешен", "SUCCESS")
+
+                if os.getenv("DEBUG", "true").lower() == "true":
+                    self.add_admin_page()
+
             else:
                 self.log(f"Ошибка: {r.json().get('detail')}", "ERROR")
         except Exception as e:
@@ -179,36 +255,112 @@ class HealthClient(QMainWindow):
         except Exception as e:
             self.log(f"Нет связи: {e}", "ERROR")
 
-    def fetch_user_info(self):
+    # def fetch_user_info(self):
+    #     try:
+    #         r = requests.get(f"{self.BASE_URL}/auth/me", headers={"Authorization": f"Bearer {self.jwt}"}, timeout=5)
+    #         if r.status_code == 200:
+    #             self.user_type = r.json().get("user_type", "free")
+    #             self.premium_label.setText(f"Тип: {self.user_type.upper()}")
+    #             self.premium_label.setStyleSheet("color: #00ff00; font-weight: bold;" if self.user_type == "premium" else "color: orange;")
+    #         else:
+    #             self.log("Не удалось получить статус", "WARN")
+    #     except Exception as e:
+    #         self.log(f"Ошибка премиума: {e}", "ERROR")
+    def fetch_user_info(self) -> dict:
         try:
             r = requests.get(f"{self.BASE_URL}/auth/me", headers={"Authorization": f"Bearer {self.jwt}"}, timeout=5)
             if r.status_code == 200:
-                self.user_type = r.json().get("user_type", "free")
+                data = r.json()
+                self.user_type = data.get("user_type", "free")
                 self.premium_label.setText(f"Тип: {self.user_type.upper()}")
-                self.premium_label.setStyleSheet("color: #00ff00; font-weight: bold;" if self.user_type == "premium" else "color: orange;")
+                self.premium_label.setStyleSheet(
+                    "color: #00ff00; font-weight: bold;" if self.user_type == "premium" else "color: orange;"
+                )
+                return data
             else:
                 self.log("Не удалось получить статус", "WARN")
         except Exception as e:
             self.log(f"Ошибка премиума: {e}", "ERROR")
+        return {}
 
-    def setup_local_user(self, username: str):
-        db = next(get_db())
-        try:
-            user = db.query(User).filter(User.username == username).first()
-            if not user:
-                user = User(username=username, email="local@temp", hashed_password="***", user_type=self.user_type)
-                db.add(user); db.commit(); db.refresh(user)
-            device = db.query(Device).filter(Device.user_id == user.id).first()
-            if not device:
-                device = Device(user_id=user.id, device_name="Local-Headset", device_id="LOCAL-001")
-                db.add(device); db.commit(); db.refresh(device)
-            self.user_id = user.id
-            self.device_id = device.id
-            self.log(f"Локальный ID: {user.id}, Device: {device.id}", "INFO")
-        except Exception as e:
-            self.log(f"БД ошибка: {e}", "ERROR")
-        finally:
-            db.close()
+    #
+    def setup_local_user(self, user_info: dict):
+        username = user_info.get("username", self.username)
+        email = user_info.get("email", f"{username}@local")
+        user_type = user_info.get("user_type", "free")
+        subscription_end = user_info.get("subscription_end")
+        is_active = user_info.get("is_active", True)
+
+        with get_db() as db:
+            try:
+                # Проверяем, есть ли пользователь с таким email
+                user = db.query(User).filter(User.email == email).first()
+
+                if not user:
+                    # Создаём нового локального пользователя
+                    user = User(
+                        username=username,
+                        email=email,
+                        hashed_password="***",
+                        user_type=user_type,
+                        subscription_end=subscription_end,
+                        is_active=is_active
+                    )
+                    db.add(user)
+                    db.commit()
+                    db.refresh(user)
+                    self.log(f"Создан локальный пользователь: {username}", "INFO")
+                else:
+                    # Обновляем статус, если он изменился
+                    updated = False
+                    if user.user_type != user_type:
+                        user.user_type = user_type
+                        updated = True
+                    if user.subscription_end != subscription_end:
+                        user.subscription_end = subscription_end
+                        updated = True
+                    if user.is_active != is_active:
+                        user.is_active = is_active
+                        updated = True
+                    if updated:
+                        db.commit()
+                        self.log(f"Обновлён локальный пользователь: {username}", "INFO")
+
+                # Проверяем наличие устройства
+                device = db.query(Device).filter(Device.user_id == user.id).first()
+                if not device:
+                    device = Device(user_id=user.id, device_name="Local-Headset", device_id="LOCAL-001")
+                    db.add(device)
+                    db.commit()
+                    db.refresh(device)
+                    self.log(f"Создано устройство: {device.device_name}", "INFO")
+
+                # Сохраняем ID
+                self.user_id = user.id
+                self.device_id = device.id
+                self.log(f"Локальный ID: {user.id}, Device: {device.id}", "INFO")
+
+            except Exception as e:
+                db.rollback()
+                self.log(f"БД ошибка: {e}", "ERROR")
+
+        # db = next(get_db())
+        # try:
+        #     user = db.query(User).filter(User.username == username).first()
+        #     if not user:
+        #         user = User(username=username, email="local@temp", hashed_password="***", user_type=self.user_type)
+        #         db.add(user); db.commit(); db.refresh(user)
+        #     device = db.query(Device).filter(Device.user_id == user.id).first()
+        #     if not device:
+        #         device = Device(user_id=user.id, device_name="Local-Headset", device_id="LOCAL-001")
+        #         db.add(device); db.commit(); db.refresh(device)
+        #     self.user_id = user.id
+        #     self.device_id = device.id
+        #     self.log(f"Локальный ID: {user.id}, Device: {device.id}", "INFO")
+        # except Exception as e:
+        #     self.log(f"БД ошибка: {e}", "ERROR")
+        # finally:
+        #     db.close()
 
     def toggle_collection(self):
         if self.is_collecting:
@@ -228,40 +380,95 @@ class HealthClient(QMainWindow):
         if not self.is_collecting:
             return
 
-        db = next(get_db())
-        try:
-            vector = SensorVector(
-                id=int(datetime.now().timestamp() * 1_000_000),
-                user_id=self.user_id,
-                device_id=self.device_id,
-                timestamp=datetime.utcnow(),
-                heart_rate=65 + randint(-15, 15),
-                hrv_rmssd=round(uniform(20, 80), 2),
-                spo2=randint(95, 100),
-                skin_temperature=round(uniform(36.0, 37.5), 2),
-                accel_x=round(uniform(-2, 2), 3),
-                accel_y=round(uniform(-2, 2), 3),
-                accel_z=round(uniform(-2, 2), 3),
-                steps_count=randint(0, 100),
-                noise_level_db=round(uniform(30, 80), 1),
-                stress_level=round(uniform(0.1, 0.9), 2),
-                model_version="v1.0",
-                confidence_score=round(uniform(0.7, 0.99), 2),
-                raw_features={"mock": True},
-                signal_quality=randint(70, 100)
-            )
-            db.add(vector); db.commit()
-            count = db.query(SensorVector).count()
-            self.local_count.setText(f"Локально: {count} записей")
-            self.log(f"HR: {vector.heart_rate} | Stress: {vector.stress_level:.2f}", "INFO")
-        except Exception as e:
-            db.rollback()
-            self.log(f"Ошибка записи: {e}", "ERROR")
-        finally:
-            db.close()
-            if self.is_collecting:
-                QTimer.singleShot(5000, self.collect_data)
 
+        with get_db() as db:
+            try:
+                vector = SensorVector(
+                    id=int(datetime.now().timestamp() * 1_000_000),
+                    user_id=self.user_id,
+                    device_id=self.device_id,
+                    timestamp=datetime.utcnow(),
+                    heart_rate=65 + randint(-15, 15),
+                    hrv_rmssd=round(uniform(20, 80), 2),
+                    spo2=randint(95, 100),
+                    skin_temperature=round(uniform(36.0, 37.5), 2),
+                    accel_x=round(uniform(-2, 2), 3),
+                    accel_y=round(uniform(-2, 2), 3),
+                    accel_z=round(uniform(-2, 2), 3),
+                    steps_count=randint(0, 100),
+                    noise_level_db=round(uniform(30, 80), 1),
+                    stress_level=round(uniform(0.1, 0.9), 2),
+                    model_version="v1.0",
+                    confidence_score=round(uniform(0.7, 0.99), 2),
+                    raw_features={"mock": True},
+                    signal_quality=randint(70, 100)
+                )
+                db.add(vector)
+                db.commit()
+                count = db.query(SensorVector).count()
+                self.local_count.setText(f"Локально: {count} записей")
+                self.log(f"HR: {vector.heart_rate} | Stress: {vector.stress_level:.2f}", "INFO")
+            except Exception as e:
+                db.rollback()
+                self.log(f"Ошибка записи: {e}", "ERROR")
+
+        if self.is_collecting:
+            QTimer.singleShot(5000, self.collect_data)
+
+    # def collect_data(self):
+
+        # if not self.is_collecting:
+        #     return
+        #
+        # db = next(get_db())
+        # try:
+        #     vector = SensorVector(
+        #         id=int(datetime.now().timestamp() * 1_000_000),
+        #         user_id=self.user_id,
+        #         device_id=self.device_id,
+        #         timestamp=datetime.utcnow(),
+        #         heart_rate=65 + randint(-15, 15),
+        #         hrv_rmssd=round(uniform(20, 80), 2),
+        #         spo2=randint(95, 100),
+        #         skin_temperature=round(uniform(36.0, 37.5), 2),
+        #         accel_x=round(uniform(-2, 2), 3),
+        #         accel_y=round(uniform(-2, 2), 3),
+        #         accel_z=round(uniform(-2, 2), 3),
+        #         steps_count=randint(0, 100),
+        #         noise_level_db=round(uniform(30, 80), 1),
+        #         stress_level=round(uniform(0.1, 0.9), 2),
+        #         model_version="v1.0",
+        #         confidence_score=round(uniform(0.7, 0.99), 2),
+        #         raw_features={"mock": True},
+        #         signal_quality=randint(70, 100)
+        #     )
+        #     db.add(vector); db.commit()
+        #     count = db.query(SensorVector).count()
+        #     self.local_count.setText(f"Локально: {count} записей")
+        #     self.log(f"HR: {vector.heart_rate} | Stress: {vector.stress_level:.2f}", "INFO")
+        # except Exception as e:
+        #     db.rollback()
+        #     self.log(f"Ошибка записи: {e}", "ERROR")
+        # finally:
+        #     db.close()
+        #     if self.is_collecting:
+        #         QTimer.singleShot(5000, self.collect_data)
+
+    # def sync(self):
+    #     if not self.jwt:
+    #         self.log("Войдите в аккаунт", "WARN")
+    #         return
+    #     if self.user_type != "premium":
+    #         self.log("Только PREMIUM", "WARN")
+    #         return
+    #     self.log("Ручная синхронизация...", "SYNC")
+    #     result = sync_to_server(self.jwt, f"{self.BASE_URL}/sync/")
+    #     db = next(get_db())
+    #     try:
+    #         count = db.query(SensorVector).count()
+    #         self.local_count.setText(f"Локально: {count} записей")
+    #     finally:
+    #         db.close()
     def sync(self):
         if not self.jwt:
             self.log("Войдите в аккаунт", "WARN")
@@ -269,14 +476,15 @@ class HealthClient(QMainWindow):
         if self.user_type != "premium":
             self.log("Только PREMIUM", "WARN")
             return
+
         self.log("Ручная синхронизация...", "SYNC")
         result = sync_to_server(self.jwt, f"{self.BASE_URL}/sync/")
-        db = next(get_db())
-        try:
+        self.log(result, "INFO" if "Успешно" in result else "ERROR")
+
+        from client.local_db import get_db
+        with get_db() as db:
             count = db.query(SensorVector).count()
             self.local_count.setText(f"Локально: {count} записей")
-        finally:
-            db.close()
 
     def logout(self):
         self.jwt = None; self.username = None; self.user_id = None; self.device_id = None

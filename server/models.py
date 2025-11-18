@@ -65,7 +65,7 @@ class Device(Base):
 class SensorVector(Base):
     __tablename__ = "a_sensor_vectors"
 
-    id = Column(BigInteger, primary_key=False)
+    id = Column(BigInteger, primary_key=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False, index=True)
     device_id = Column(Integer, ForeignKey("devices.id"), nullable=False, index=True)
     timestamp = Column(DateTime(timezone=True), nullable=False, index=True)
