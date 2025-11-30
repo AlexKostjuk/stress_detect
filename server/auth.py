@@ -26,6 +26,7 @@ security = HTTPBearer()
 # === Ленивый pwd_context (argon2) ===
 _pwd_context = None
 
+
 def get_pwd_context():
     global _pwd_context
     if _pwd_context is None:
@@ -46,12 +47,15 @@ class UserCreate(BaseModel):
     password: str
     user_type: str = "free"
 
+
 class UserLogin(BaseModel):
     username: str
     password: str
 
+
 class UserUpdate(BaseModel):
     user_type: str
+
 
 class Token(BaseModel):
     access_token: str
@@ -100,7 +104,8 @@ async def register(user_data: UserCreate, db: AsyncSession = Depends(get_db)):
     await db.commit()
     await db.refresh(new_user)
 
-    # НИЧЕГО НЕ ДЕЛАЕМ С user_retention — триггер сам создаст!
+    # ✅ ТРИГГЕР trigger_insert_retention АВТОМАТИЧЕСКИ создаст запись в user_retention
+    # Ничего вручную делать не нужно!
 
     # JWT
     access_token = create_access_token({"sub": new_user.username})
@@ -126,24 +131,37 @@ async def login(user_data: UserLogin, db: AsyncSession = Depends(get_db)):
 # === Получить текущего пользователя ===
 @router.get("/me")
 async def get_me(username: str = Depends(verify_token), db: AsyncSession = Depends(get_db)):
+    """
+    Возвращает информацию о текущем пользователе.
+
+    ВАЖНО: Клиент использует эти данные для:
+    - Отображения статуса подписки
+    - Синхронизации локальной БД
+    - Включения/отключения функций (sync для PREMIUM)
+    """
     result = await db.execute(select(User).where(User.username == username))
     user = result.scalars().first()
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
+
+    # ✅ Возвращаем ВСЮ необходимую информацию для клиента
     return {
         "id": user.id,
         "username": user.username,
         "email": user.email,
-        "user_type": user.user_type
+        "user_type": user.user_type,
+        "subscription_end": user.subscription_end.isoformat() if user.subscription_end else None,
+        "is_active": user.is_active,
+        "created_at": user.created_at.isoformat() if user.created_at else None
     }
 
 
 # === Обновить себя (user_type) ===
 @router.patch("/me")
 async def update_me(
-    update_data: UserUpdate,
-    username: str = Depends(verify_token),
-    db: AsyncSession = Depends(get_db)
+        update_data: UserUpdate,
+        username: str = Depends(verify_token),
+        db: AsyncSession = Depends(get_db)
 ):
     result = await db.execute(select(User).where(User.username == username))
     user = result.scalars().first()
@@ -153,14 +171,18 @@ async def update_me(
     if update_data.user_type not in ["free", "premium"]:
         raise HTTPException(status_code=400, detail="Invalid user_type")
 
+    # Обновляем тип пользователя
     user.user_type = update_data.user_type
     db.add(user)
     await db.commit()
+    await db.refresh(user)
 
-    # Триггер trigger_update_retention САМ обновит retention_days!
+    # ✅ ТРИГГЕР trigger_update_retention АВТОМАТИЧЕСКИ обновит retention_days!
+    # FREE: 60 дней, PREMIUM: 365 дней
 
     return {
         "id": user.id,
         "username": user.username,
-        "user_type": user.user_type
+        "user_type": user.user_type,
+        "message": "User type updated. Retention policy will be applied automatically."
     }

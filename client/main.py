@@ -24,7 +24,6 @@ from PyQt6.QtWidgets import QStackedWidget
 from client.admin_page import UserAdminPage
 
 
-
 class HealthClient(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -37,6 +36,7 @@ class HealthClient(QMainWindow):
         self.user_id = None
         self.device_id = None
         self.user_type = "free"
+        self.subscription_end = None  # ✅ ДОДАНО
         self.is_collecting = False
 
         self.BASE_URL = "http://127.0.0.1:8000"
@@ -63,45 +63,47 @@ class HealthClient(QMainWindow):
         container.setLayout(layout)
         self.setCentralWidget(container)
 
-        # tabs = QTabWidget()
-        # tabs.addTab(self.auth_tab(), "Авторизация")
-        # tabs.addTab(self.monitor_tab(), "Мониторинг")
-        # tabs.addTab(self.terminal_tab(), "Терминал")
-        #
-        # container = QWidget()
-        # layout = QVBoxLayout()
-        # layout.addWidget(tabs)
-        # container.setLayout(layout)
-        # self.setCentralWidget(container)
-
     def auth_tab(self):
         w = QWidget()
         l = QVBoxLayout()
 
-        reg_frame = QFrame(); reg_frame.setFrameShape(QFrame.Shape.StyledPanel)
+        reg_frame = QFrame();
+        reg_frame.setFrameShape(QFrame.Shape.StyledPanel)
         reg_l = QVBoxLayout()
-        self.reg_user = QLineEdit(); self.reg_user.setPlaceholderText("Логин")
-        self.reg_email = QLineEdit(); self.reg_email.setPlaceholderText("Email")
-        self.reg_pass = QLineEdit(); self.reg_pass.setPlaceholderText("Пароль")
+        self.reg_user = QLineEdit();
+        self.reg_user.setPlaceholderText("Логин")
+        self.reg_email = QLineEdit();
+        self.reg_email.setPlaceholderText("Email")
+        self.reg_pass = QLineEdit();
+        self.reg_pass.setPlaceholderText("Пароль")
         self.reg_pass.setEchoMode(QLineEdit.EchoMode.Password)
-        reg_btn = QPushButton("Зарегистрироваться"); reg_btn.clicked.connect(self.register)
+        reg_btn = QPushButton("Зарегистрироваться");
+        reg_btn.clicked.connect(self.register)
         reg_l.addWidget(QLabel("Регистрация"))
-        reg_l.addWidget(self.reg_user); reg_l.addWidget(self.reg_email)
-        reg_l.addWidget(self.reg_pass); reg_l.addWidget(reg_btn)
+        reg_l.addWidget(self.reg_user);
+        reg_l.addWidget(self.reg_email)
+        reg_l.addWidget(self.reg_pass);
+        reg_l.addWidget(reg_btn)
         reg_frame.setLayout(reg_l)
 
-        login_frame = QFrame(); login_frame.setFrameShape(QFrame.Shape.StyledPanel)
+        login_frame = QFrame();
+        login_frame.setFrameShape(QFrame.Shape.StyledPanel)
         login_l = QVBoxLayout()
-        self.login_user = QLineEdit(); self.login_user.setPlaceholderText("Логин")
-        self.login_pass = QLineEdit(); self.login_pass.setPlaceholderText("Пароль")
+        self.login_user = QLineEdit();
+        self.login_user.setPlaceholderText("Логин")
+        self.login_pass = QLineEdit();
+        self.login_pass.setPlaceholderText("Пароль")
         self.login_pass.setEchoMode(QLineEdit.EchoMode.Password)
-        login_btn = QPushButton("Войти"); login_btn.clicked.connect(self.login)
+        login_btn = QPushButton("Войти");
+        login_btn.clicked.connect(self.login)
         login_l.addWidget(QLabel("Вход"))
-        login_l.addWidget(self.login_user); login_l.addWidget(self.login_pass)
+        login_l.addWidget(self.login_user);
+        login_l.addWidget(self.login_pass)
         login_l.addWidget(login_btn)
         login_frame.setLayout(login_l)
 
-        l.addWidget(reg_frame); l.addWidget(login_frame)
+        l.addWidget(reg_frame);
+        l.addWidget(login_frame)
         w.setLayout(l)
         return w
 
@@ -116,6 +118,11 @@ class HealthClient(QMainWindow):
         self.premium_label = QLabel("Тип: FREE")
         self.premium_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.premium_label.setStyleSheet("color: orange;")
+
+        # ✅ ДОДАНО: Інформація про підписку
+        self.subscription_info = QLabel("")
+        self.subscription_info.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.subscription_info.setStyleSheet("color: #ffff00; font-size: 10px;")
 
         self.start_stop_btn = QPushButton("Старт сбора")
         self.start_stop_btn.clicked.connect(self.toggle_collection)
@@ -134,6 +141,7 @@ class HealthClient(QMainWindow):
 
         l.addWidget(self.status)
         l.addWidget(self.premium_label)
+        l.addWidget(self.subscription_info)  # ✅ ДОДАНО
         l.addWidget(self.local_count)
         l.addWidget(self.start_stop_btn)
         l.addWidget(self.sync_btn)
@@ -152,9 +160,6 @@ class HealthClient(QMainWindow):
         l.addWidget(self.terminal)
         w.setLayout(l)
         return w
-
-    # def start_cleanup_timer(self):
-    #     QTimer.singleShot(86400000, cleanup_old_data)
 
     def start_cleanup_timer(self):
         self.cleanup_timer = QTimer()
@@ -181,62 +186,48 @@ class HealthClient(QMainWindow):
         self.terminal.append(html)
         self.terminal.moveCursor(QTextCursor.MoveOperation.End)
 
-    # def login(self):
-    #     u, p = self.login_user.text().strip(), self.login_pass.text().strip()
-    #     if not u or not p:
-    #         self.log("Заполните поля", "WARN")
-    #         return
-    #     try:
-    #         r = requests.post(f"{self.BASE_URL}/auth/login", json={"username": u, "password": p}, timeout=10)
-    #         if r.status_code == 200:
-    #             self.jwt = r.json()["access_token"]
-    #             payload = jwt.decode(self.jwt, options={"verify_signature": False})
-    #             self.username = payload.get("sub")
-    #             self.fetch_user_info()
-    #             self.setup_local_user(u)
-    #
-    #             self.start_stop_btn.setEnabled(True)
-    #             self.sync_btn.setEnabled(self.user_type == "premium")
-    #             self.logout_btn.setEnabled(True)
-    #             self.status.setText(f"Пользователь: {u}")
-    #             self.log("Вход успешен", "SUCCESS")
-    #             if os.getenv("DEBUG", "true").lower() == "true":
-    #                 self.add_admin_page()
-    #
-    #         else:
-    #             self.log(f"Ошибка: {r.json().get('detail')}", "ERROR")
-    #     except Exception as e:
-    #         self.log(f"Сервер недоступен: {e}", "ERROR")
-
     def login(self):
+        """
+        ✅ ВИПРАВЛЕНО: Правильний flow авторизації
+        """
         u, p = self.login_user.text().strip(), self.login_pass.text().strip()
         if not u or not p:
             self.log("Заполните поля", "WARN")
             return
+
         try:
+            # 1. Авторизація
             r = requests.post(f"{self.BASE_URL}/auth/login", json={"username": u, "password": p}, timeout=10)
+
             if r.status_code == 200:
                 self.jwt = r.json()["access_token"]
                 payload = jwt.decode(self.jwt, options={"verify_signature": False})
                 self.username = payload.get("sub")
 
-                # Шаг 2: получаем полную информацию о пользователе
-                user_info = self.fetch_user_info()
+                # 2. Отримуємо повну інформацію про користувача
+                user_info = self.fetch_user_info()  # ✅ Тепер повертає dict
 
-                # передаём её в setup_local_user
-                self.setup_local_user(user_info)
+                if not user_info:
+                    self.log("Не удалось получить информацию о пользователе", "ERROR")
+                    return
 
+                # 3. Налаштовуємо локальну БД
+                self.setup_local_user(user_info)  # ✅ Передаємо dict
+
+                # 4. Увімкнення UI
                 self.start_stop_btn.setEnabled(True)
                 self.sync_btn.setEnabled(self.user_type == "premium")
                 self.logout_btn.setEnabled(True)
                 self.status.setText(f"Пользователь: {u}")
                 self.log("Вход успешен", "SUCCESS")
 
+                # 5. Адмін панель (DEBUG)
                 if os.getenv("DEBUG", "true").lower() == "true":
                     self.add_admin_page()
 
             else:
                 self.log(f"Ошибка: {r.json().get('detail')}", "ERROR")
+
         except Exception as e:
             self.log(f"Сервер недоступен: {e}", "ERROR")
 
@@ -246,64 +237,104 @@ class HealthClient(QMainWindow):
             self.log("Заполните поля", "WARN")
             return
         try:
-            r = requests.post(f"{self.BASE_URL}/auth/register", json={"username": u, "email": e, "password": p}, timeout=10)
+            r = requests.post(f"{self.BASE_URL}/auth/register", json={"username": u, "email": e, "password": p},
+                              timeout=10)
             if r.status_code == 200:
                 self.log("Аккаунт создан!", "SUCCESS")
-                self.reg_user.clear(); self.reg_email.clear(); self.reg_pass.clear()
+                self.reg_user.clear();
+                self.reg_email.clear();
+                self.reg_pass.clear()
             else:
                 self.log(f"Ошибка: {r.json().get('detail')}", "ERROR")
         except Exception as e:
             self.log(f"Нет связи: {e}", "ERROR")
 
-    # def fetch_user_info(self):
-    #     try:
-    #         r = requests.get(f"{self.BASE_URL}/auth/me", headers={"Authorization": f"Bearer {self.jwt}"}, timeout=5)
-    #         if r.status_code == 200:
-    #             self.user_type = r.json().get("user_type", "free")
-    #             self.premium_label.setText(f"Тип: {self.user_type.upper()}")
-    #             self.premium_label.setStyleSheet("color: #00ff00; font-weight: bold;" if self.user_type == "premium" else "color: orange;")
-    #         else:
-    #             self.log("Не удалось получить статус", "WARN")
-    #     except Exception as e:
-    #         self.log(f"Ошибка премиума: {e}", "ERROR")
     def fetch_user_info(self) -> dict:
+        """
+        ✅ ВИПРАВЛЕНО: Повертає dict з повною інформацією
+        """
         try:
             r = requests.get(f"{self.BASE_URL}/auth/me", headers={"Authorization": f"Bearer {self.jwt}"}, timeout=5)
+
             if r.status_code == 200:
                 data = r.json()
                 self.user_type = data.get("user_type", "free")
-                self.premium_label.setText(f"Тип: {self.user_type.upper()}")
-                self.premium_label.setStyleSheet(
-                    "color: #00ff00; font-weight: bold;" if self.user_type == "premium" else "color: orange;"
-                )
+                self.subscription_end = data.get("subscription_end")  # ✅ ДОДАНО
+
+                # Відображення статусу підписки
+                self.update_subscription_display()
+
                 return data
             else:
                 self.log("Не удалось получить статус", "WARN")
+                return {}
+
         except Exception as e:
             self.log(f"Ошибка премиума: {e}", "ERROR")
-        return {}
+            return {}
 
-    #
+    def update_subscription_display(self):
+        """
+        ✅ ДОДАНО: Оновлення відображення інформації про підписку
+        """
+        # Оновлюємо тип
+        self.premium_label.setText(f"Тип: {self.user_type.upper()}")
+
+        if self.user_type == "premium":
+            self.premium_label.setStyleSheet("color: #00ff00; font-weight: bold;")
+
+            # Показуємо дату закінчення
+            if self.subscription_end:
+                try:
+                    end_date = datetime.fromisoformat(self.subscription_end.replace("Z", ""))
+                    days_left = (end_date - datetime.utcnow()).days
+
+                    if days_left > 0:
+                        self.subscription_info.setText(
+                            f"Подписка до: {end_date.strftime('%d.%m.%Y')} ({days_left} дн.)")
+                        self.subscription_info.setStyleSheet("color: #00ff00; font-size: 10px;")
+                    else:
+                        self.subscription_info.setText("⚠ Подписка истекла")
+                        self.subscription_info.setStyleSheet("color: #ff0000; font-size: 10px;")
+                except:
+                    self.subscription_info.setText("")
+            else:
+                self.subscription_info.setText("")
+        else:
+            self.premium_label.setStyleSheet("color: orange;")
+            self.subscription_info.setText("")
+
     def setup_local_user(self, user_info: dict):
+        """
+        ✅ ВИПРАВЛЕНО: Зберігає subscription_end та is_active
+        """
         username = user_info.get("username", self.username)
         email = user_info.get("email", f"{username}@local")
         user_type = user_info.get("user_type", "free")
-        subscription_end = user_info.get("subscription_end")
         is_active = user_info.get("is_active", True)
+
+        # ✅ ДОДАНО: Парсимо дату підписки
+        subscription_end_str = user_info.get("subscription_end")
+        subscription_end = None
+        if subscription_end_str:
+            try:
+                subscription_end = datetime.fromisoformat(subscription_end_str.replace("Z", ""))
+            except:
+                pass
 
         with get_db() as db:
             try:
-                # Проверяем, есть ли пользователь с таким email
+                # Перевіряємо чи є користувач
                 user = db.query(User).filter(User.email == email).first()
 
                 if not user:
-                    # Создаём нового локального пользователя
+                    # Створюємо нового
                     user = User(
                         username=username,
                         email=email,
                         hashed_password="***",
                         user_type=user_type,
-                        subscription_end=subscription_end,
+                        subscription_end=subscription_end,  # ✅ ДОДАНО
                         is_active=is_active
                     )
                     db.add(user)
@@ -311,22 +342,23 @@ class HealthClient(QMainWindow):
                     db.refresh(user)
                     self.log(f"Создан локальный пользователь: {username}", "INFO")
                 else:
-                    # Обновляем статус, если он изменился
+                    # Оновлюємо якщо змінилось
                     updated = False
                     if user.user_type != user_type:
                         user.user_type = user_type
                         updated = True
-                    if user.subscription_end != subscription_end:
+                    if user.subscription_end != subscription_end:  # ✅ ДОДАНО
                         user.subscription_end = subscription_end
                         updated = True
                     if user.is_active != is_active:
                         user.is_active = is_active
                         updated = True
+
                     if updated:
                         db.commit()
                         self.log(f"Обновлён локальный пользователь: {username}", "INFO")
 
-                # Проверяем наличие устройства
+                # Перевіряємо пристрій
                 device = db.query(Device).filter(Device.user_id == user.id).first()
                 if not device:
                     device = Device(user_id=user.id, device_name="Local-Headset", device_id="LOCAL-001")
@@ -335,7 +367,7 @@ class HealthClient(QMainWindow):
                     db.refresh(device)
                     self.log(f"Создано устройство: {device.device_name}", "INFO")
 
-                # Сохраняем ID
+                # Зберігаємо ID
                 self.user_id = user.id
                 self.device_id = device.id
                 self.log(f"Локальный ID: {user.id}, Device: {device.id}", "INFO")
@@ -343,24 +375,6 @@ class HealthClient(QMainWindow):
             except Exception as e:
                 db.rollback()
                 self.log(f"БД ошибка: {e}", "ERROR")
-
-        # db = next(get_db())
-        # try:
-        #     user = db.query(User).filter(User.username == username).first()
-        #     if not user:
-        #         user = User(username=username, email="local@temp", hashed_password="***", user_type=self.user_type)
-        #         db.add(user); db.commit(); db.refresh(user)
-        #     device = db.query(Device).filter(Device.user_id == user.id).first()
-        #     if not device:
-        #         device = Device(user_id=user.id, device_name="Local-Headset", device_id="LOCAL-001")
-        #         db.add(device); db.commit(); db.refresh(device)
-        #     self.user_id = user.id
-        #     self.device_id = device.id
-        #     self.log(f"Локальный ID: {user.id}, Device: {device.id}", "INFO")
-        # except Exception as e:
-        #     self.log(f"БД ошибка: {e}", "ERROR")
-        # finally:
-        #     db.close()
 
     def toggle_collection(self):
         if self.is_collecting:
@@ -380,14 +394,18 @@ class HealthClient(QMainWindow):
         if not self.is_collecting:
             return
 
-
         with get_db() as db:
             try:
+                from datetime import timezone as tz
+
+                # ✅ ВИПРАВЛЕНО: Використовуємо datetime.now(tz.utc) замість utcnow()
+                now_with_tz = datetime.now(tz.utc)
+
                 vector = SensorVector(
                     id=int(datetime.now().timestamp() * 1_000_000),
                     user_id=self.user_id,
                     device_id=self.device_id,
-                    timestamp=datetime.utcnow(),
+                    timestamp=now_with_tz,  # ✅ З timezone
                     heart_rate=65 + randint(-15, 15),
                     hrv_rmssd=round(uniform(20, 80), 2),
                     spo2=randint(95, 100),
@@ -415,84 +433,43 @@ class HealthClient(QMainWindow):
         if self.is_collecting:
             QTimer.singleShot(5000, self.collect_data)
 
-    # def collect_data(self):
-
-        # if not self.is_collecting:
-        #     return
-        #
-        # db = next(get_db())
-        # try:
-        #     vector = SensorVector(
-        #         id=int(datetime.now().timestamp() * 1_000_000),
-        #         user_id=self.user_id,
-        #         device_id=self.device_id,
-        #         timestamp=datetime.utcnow(),
-        #         heart_rate=65 + randint(-15, 15),
-        #         hrv_rmssd=round(uniform(20, 80), 2),
-        #         spo2=randint(95, 100),
-        #         skin_temperature=round(uniform(36.0, 37.5), 2),
-        #         accel_x=round(uniform(-2, 2), 3),
-        #         accel_y=round(uniform(-2, 2), 3),
-        #         accel_z=round(uniform(-2, 2), 3),
-        #         steps_count=randint(0, 100),
-        #         noise_level_db=round(uniform(30, 80), 1),
-        #         stress_level=round(uniform(0.1, 0.9), 2),
-        #         model_version="v1.0",
-        #         confidence_score=round(uniform(0.7, 0.99), 2),
-        #         raw_features={"mock": True},
-        #         signal_quality=randint(70, 100)
-        #     )
-        #     db.add(vector); db.commit()
-        #     count = db.query(SensorVector).count()
-        #     self.local_count.setText(f"Локально: {count} записей")
-        #     self.log(f"HR: {vector.heart_rate} | Stress: {vector.stress_level:.2f}", "INFO")
-        # except Exception as e:
-        #     db.rollback()
-        #     self.log(f"Ошибка записи: {e}", "ERROR")
-        # finally:
-        #     db.close()
-        #     if self.is_collecting:
-        #         QTimer.singleShot(5000, self.collect_data)
-
-    # def sync(self):
-    #     if not self.jwt:
-    #         self.log("Войдите в аккаунт", "WARN")
-    #         return
-    #     if self.user_type != "premium":
-    #         self.log("Только PREMIUM", "WARN")
-    #         return
-    #     self.log("Ручная синхронизация...", "SYNC")
-    #     result = sync_to_server(self.jwt, f"{self.BASE_URL}/sync/")
-    #     db = next(get_db())
-    #     try:
-    #         count = db.query(SensorVector).count()
-    #         self.local_count.setText(f"Локально: {count} записей")
-    #     finally:
-    #         db.close()
     def sync(self):
+        """
+        ✅ ВИПРАВЛЕНО: Використовує оновлений sync_to_server
+        """
         if not self.jwt:
             self.log("Войдите в аккаунт", "WARN")
             return
+
         if self.user_type != "premium":
             self.log("Только PREMIUM", "WARN")
             return
 
         self.log("Ручная синхронизация...", "SYNC")
         result = sync_to_server(self.jwt, f"{self.BASE_URL}/sync/")
-        self.log(result, "INFO" if "Успешно" in result else "ERROR")
 
-        from client.local_db import get_db
+        # Оновлюємо лічильник
         with get_db() as db:
             count = db.query(SensorVector).count()
             self.local_count.setText(f"Локально: {count} записей")
 
     def logout(self):
-        self.jwt = None; self.username = None; self.user_id = None; self.device_id = None
-        self.user_type = "free"; self.is_collecting = False
-        self.start_stop_btn.setText("Старт сбора"); self.start_stop_btn.setEnabled(False)
-        self.sync_btn.setEnabled(False); self.logout_btn.setEnabled(False)
-        self.status.setText("Ожидание входа..."); self.premium_label.setText("Тип: FREE")
+        self.jwt = None
+        self.username = None
+        self.user_id = None
+        self.device_id = None
+        self.user_type = "free"
+        self.subscription_end = None  # ✅ ДОДАНО
+        self.is_collecting = False
+
+        self.start_stop_btn.setText("Старт сбора")
+        self.start_stop_btn.setEnabled(False)
+        self.sync_btn.setEnabled(False)
+        self.logout_btn.setEnabled(False)
+        self.status.setText("Ожидание входа...")
+        self.premium_label.setText("Тип: FREE")
         self.premium_label.setStyleSheet("color: orange;")
+        self.subscription_info.setText("")  # ✅ ДОДАНО
         self.log("Выход выполнен", "WARN")
 
 
