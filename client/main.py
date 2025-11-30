@@ -39,7 +39,7 @@ class HealthClient(QMainWindow):
         self.user_type = "free"
         self.is_collecting = False
 
-        self.BASE_URL = "http://host.docker.internal:8000"
+        self.BASE_URL = "http://127.0.0.1:8000"
 
         init_db()
         self.setup_ui()

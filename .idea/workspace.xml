@@ -4,26 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f4f33e-f584-4dae-ad7a-72c830c0587a" name="Changes" comment="stress_detect_exe_work_problem_sinc_local_doker_db">
-      <change afterPath="$PROJECT_DIR$/client/admin_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/sync_old.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="09f4f33e-f584-4dae-ad7a-72c830c0587a" name="Changes" comment="stress_detect_problem_sinc_local_doker_db_datetime">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/452bedc6-31c8-49bc-b725-d7d9225ac9b3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/452bedc6-31c8-49bc-b725-d7d9225ac9b3/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4c21ff20-2692-4b17-ab70-6f71df796a27.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4c21ff20-2692-4b17-ab70-6f71df796a27/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4e3242b0-fdc9-46ef-9993-46a6e8ec75bf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4e3242b0-fdc9-46ef-9993-46a6e8ec75bf.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4e3242b0-fdc9-46ef-9993-46a6e8ec75bf/storage_v2/_src_/database/health_monitor.d0rrWQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4e3242b0-fdc9-46ef-9993-46a6e8ec75bf/storage_v2/_src_/database/health_monitor.d0rrWQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4e3242b0-fdc9-46ef-9993-46a6e8ec75bf/storage_v2/_src_/database/health_monitor.d0rrWQ/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4e3242b0-fdc9-46ef-9993-46a6e8ec75bf/storage_v2/_src_/database/health_monitor.d0rrWQ/schema/public.abK9xQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/52712e15-9deb-4ae1-ac3f-534245753bf6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/52712e15-9deb-4ae1-ac3f-534245753bf6/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/80ed18cd-5abe-488c-a982-a381e5b45932.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/80ed18cd-5abe-488c-a982-a381e5b45932/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c80d099d-ad81-463c-97bd-12318f0f5ff5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c80d099d-ad81-463c-97bd-12318f0f5ff5/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fb2a9297-4bcc-4fdc-8b18-29d990453b2b.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fb2a9297-4bcc-4fdc-8b18-29d990453b2b/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/665be3f4-6a1e-4c37-a531-ac566f80fc9b.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/665be3f4-6a1e-4c37-a531-ac566f80fc9b/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a0a2681-da09-4c28-b02b-2ce3bff8cfb7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a0a2681-da09-4c28-b02b-2ce3bff8cfb7/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/93726e16-9ad0-4af0-b9d0-0e66d72c60bf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/93726e16-9ad0-4af0-b9d0-0e66d72c60bf/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a93bf2ef-c38a-417c-b853-2582b8bf3bd7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a93bf2ef-c38a-417c-b853-2582b8bf3bd7/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/HealthMonitor.spec" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/build/HealthMonitor/Analysis-00.toc" beforeDir="false" />
@@ -35,10 +31,8 @@
       <change beforePath="$PROJECT_DIR$/client/build/HealthMonitor/base_library.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/build/HealthMonitor/warn-HealthMonitor.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/build/HealthMonitor/xref-HealthMonitor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cleanup.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/cleanup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/dist/HealthMonitor.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/dist/health_local.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/local_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/local_db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/local_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/local_models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/sync.py" afterDir="false" />
@@ -156,7 +150,10 @@
       <workItem from="1762178903398" duration="6533000" />
       <workItem from="1762697336974" duration="1628000" />
       <workItem from="1762698995687" duration="9545000" />
-      <workItem from="1763457424016" duration="24994000" />
+      <workItem from="1763457424016" duration="25269000" />
+      <workItem from="1763551408724" duration="3261000" />
+      <workItem from="1763554725226" duration="973000" />
+      <workItem from="1763555985340" duration="13047000" />
     </task>
     <task id="LOCAL-00001" summary="start_stress_detect">
       <option name="closed" value="true" />
@@ -214,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762717317865</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="stress_detect_problem_sinc_local_doker_db_datetime">
+      <option name="closed" value="true" />
+      <created>1763488064051</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763488064051</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +233,8 @@
     <MESSAGE value="start_stress_detect_add_user_work" />
     <MESSAGE value="start_stress_detect_apdate_to_prem_work" />
     <MESSAGE value="stress_detect_exe_work_problem_sinc_local_doker_db" />
-    <option name="LAST_COMMIT_MESSAGE" value="stress_detect_exe_work_problem_sinc_local_doker_db" />
+    <MESSAGE value="stress_detect_problem_sinc_local_doker_db_datetime" />
+    <option name="LAST_COMMIT_MESSAGE" value="stress_detect_problem_sinc_local_doker_db_datetime" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/stress_detect$stress_detect.coverage" NAME="stress_detect Coverage Results" MODIFIED="1762706514085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />

@@ -1,10 +1,24 @@
+# server/routes/sync.py
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import insert
-from models import SensorVector
+from sqlalchemy import insert, select
+from datetime import datetime
+from models import SensorVector, Device
 from database import get_db
 
 router = APIRouter()
+
+def parse_timestamp(value):
+    """Преобразует строку в datetime, если нужно."""
+    if isinstance(value, datetime):
+        return value
+    if isinstance(value, str):
+        try:
+            return datetime.fromisoformat(value.replace("Z", ""))
+        except Exception:
+            pass
+    return None
+
 
 @router.post("/")
 async def sync_vectors(vectors: list[dict], db: AsyncSession = Depends(get_db)):
@@ -13,56 +27,115 @@ async def sync_vectors(vectors: list[dict], db: AsyncSession = Depends(get_db)):
 
     for v in vectors:
         try:
-            # Логируем входящие данные
-            print("Вставка записи:", v)
+            # -------------------------------
+            # 1 ВАЛИДАЦИЯ timestamp
+            # -------------------------------
+            ts = parse_timestamp(v.get("timestamp"))
+            if ts is None:
+                errors.append(f"Invalid timestamp: {v.get('timestamp')}")
+                print("❌ Invalid timestamp:", v.get("timestamp"))
+                continue
 
-            # Вставляем только поля, которые реально есть в модели
+            # -------------------------------
+            # 2 ПРОВЕРКА СУЩЕСТВОВАНИЯ УСТРОЙСТВА
+            # -------------------------------
+            device_id = v.get("device_id")
+            user_id = v.get("user_id")
+
+            result = await db.execute(select(Device).where(Device.id == device_id))
+            device = result.scalars().first()
+
+            if not device:
+                # Автоматически создаём устройство
+                new_device = Device(
+                    id=device_id,
+                    user_id=user_id,
+                    device_name=f"Auto-{device_id}",
+                    device_type="auto",
+                    device_id=f"auto-{device_id}",
+                    is_active=True
+                )
+                db.add(new_device)
+                await db.flush()  # важно!
+
+                print(f"⚙ Авто-создано устройство ID={device_id}")
+
+            # -------------------------------
+            # 3 ПОДГОТОВКА ДАННЫХ ДЛЯ INSERT
+            # -------------------------------
+            allowed_fields = {col.name for col in SensorVector.__table__.columns}
+
             data = {
-                "id": v.get("id"),
-                "user_id": v.get("user_id"),
-                "device_id": v.get("device_id"),
-                "timestamp": v.get("timestamp"),
-                "heart_rate": v.get("heart_rate"),
-                "hrv_rmssd": v.get("hrv_rmssd"),
-                "hrv_sdnn": v.get("hrv_sdnn"),
-                "spo2": v.get("spo2"),
-                "skin_temperature": v.get("skin_temperature"),
-                "accel_x": v.get("accel_x"),
-                "accel_y": v.get("accel_y"),
-                "accel_z": v.get("accel_z"),
-                "gyro_x": v.get("gyro_x"),
-                "gyro_y": v.get("gyro_y"),
-                "gyro_z": v.get("gyro_z"),
-                "steps_count": v.get("steps_count"),
-                "noise_level_db": v.get("noise_level_db"),
-                "breathing_rate": v.get("breathing_rate"),
-                "activity_type": v.get("activity_type"),
-                "location_type": v.get("location_type"),
-                "battery_level": v.get("battery_level"),
-                "stress_level": v.get("stress_level"),
-                "energy_level": v.get("energy_level"),
-                "focus_level": v.get("focus_level"),
-                "model_version": v.get("model_version"),
-                "confidence_score": v.get("confidence_score"),
-                "raw_features": v.get("raw_features"),
-                "lora_weights": v.get("lora_weights"),
-                "signal_quality": v.get("signal_quality"),
+                key: (ts if key == "timestamp" else value)
+                for key, value in v.items()
+                if key in allowed_fields
             }
 
+            # -------------------------------
+            # 4 ВСТАВКА
+            # -------------------------------
             await db.execute(insert(SensorVector).values(**data))
             inserted += 1
+
         except Exception as e:
             errors.append(str(e))
-            print("Ошибка вставки:", e)
+            print("❌ Ошибка вставки:", e)
 
+    # -------------------------------
+    # 5 КОММИТ
+    # -------------------------------
     try:
         await db.commit()
     except Exception as e:
         await db.rollback()
-        errors.append(f"Ошибка коммита: {e}")
-        print("Ошибка коммита:", e)
+        errors.append(f"commit error: {e}")
+        print("❌ Commit error:", e)
 
     return {
-        "count": inserted,
-        "errors": errors
+        "inserted": inserted,
+        "errors": errors,
     }
+
+
+
+
+# from fastapi import APIRouter, Depends
+# from sqlalchemy.ext.asyncio import AsyncSession
+# from sqlalchemy import insert
+# from database import get_db
+# from models import SensorVector
+# from schemas import SensorVectorSync
+#
+# router = APIRouter()
+#
+# @router.post("/")
+# async def sync_vectors(vectors: list[SensorVectorSync], db: AsyncSession = Depends(get_db)):
+#     inserted = 0
+#     errors = []
+#
+#     for v in vectors:
+#         try:
+#             obj = v.dict()
+#
+#             # created_at из локальной БД — лишний (у сервера своё поле)
+#             obj.pop("created_at", None)
+#
+#             await db.execute(insert(SensorVector).values(**obj))
+#             inserted += 1
+#
+#         except Exception as e:
+#             errors.append(str(e))
+#             print("Ошибка вставки:", e)
+#
+#     try:
+#         await db.commit()
+#     except Exception as e:
+#         await db.rollback()
+#         errors.append(f"Ошибка коммита: {e}")
+#         print("Ошибка коммита:", e)
+#
+#     return {
+#         "count": inserted,
+#         "errors": errors
+#     }
+#
