@@ -1,5 +1,6 @@
 package com.stress_detekt.activities
-
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -18,9 +19,12 @@ class MainActivity : AppCompatActivity() {
         
         setupNavigation()
     }
-    
+
     private fun setupNavigation() {
-        val navController = findNavController(R.id.nav_host_fragment)
+        // ← ЭТО ОБХОДИТ R-КЛАСС И КЭШ НАВСЕГДА
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
         binding.bottomNav.setupWithNavController(navController)
     }
 }
