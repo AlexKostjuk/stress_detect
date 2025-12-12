@@ -1,6 +1,30 @@
 [
     {
-        "merged": "com.stress_detekt.app-mergeDebugResources-30:/layout/activity_main.xml",
-        "source": "com.stress_detekt.app-main-33:/layout/activity_main.xml"
+        "merged": "com.stress_detekt.app-mergeDebugResources-51:/layout/fragment_terminal.xml",
+        "source": "com.stress_detekt.app-main-54:/layout/fragment_terminal.xml"
+    },
+    {
+        "merged": "com.stress_detekt.app-mergeDebugResources-51:/layout/activity_register.xml",
+        "source": "com.stress_detekt.app-main-54:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.stress_detekt.app-mergeDebugResources-51:/layout/fragment_dashboard.xml",
+        "source": "com.stress_detekt.app-main-54:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.stress_detekt.app-mergeDebugResources-51:/layout/activity_main.xml",
+        "source": "com.stress_detekt.app-main-54:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.stress_detekt.app-mergeDebugResources-51:/layout/activity_splash.xml",
+        "source": "com.stress_detekt.app-main-54:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.stress_detekt.app-mergeDebugResources-51:/layout/activity_login.xml",
+        "source": "com.stress_detekt.app-main-54:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.stress_detekt.app-mergeDebugResources-51:/layout/fragment_results.xml",
+        "source": "com.stress_detekt.app-main-54:/layout/fragment_results.xml"
     }
 ]

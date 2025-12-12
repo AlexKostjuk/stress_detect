@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.stress_detekt.app-mergeDebugResources-29:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+            "outputFile": "com.stress_detekt.app-mergeDebugResources-50:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\421f23c4cf88f0f99b0c51ec3ae3c654\\transformed\\material-1.12.0\\res\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\3944c8b0fffdab93bc1ebb93c9498559\\transformed\\material-1.12.0\\res\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

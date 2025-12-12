@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f4f33e-f584-4dae-ad7a-72c830c0587a" name="Changes" comment="stress_sync_ok_android_start" />
+    <list default="true" id="09f4f33e-f584-4dae-ad7a-72c830c0587a" name="Changes" comment="stress_sync_ok_android_start">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +135,7 @@
       <workItem from="1764508921079" duration="10445000" />
       <workItem from="1764759924241" duration="2099000" />
       <workItem from="1765301820790" duration="533000" />
-      <workItem from="1765545928169" duration="3867000" />
+      <workItem from="1765545928169" duration="4245000" />
     </task>
     <task id="LOCAL-00001" summary="start_stress_detect">
       <option name="closed" value="true" />
@@ -228,6 +230,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start_stress_detect" />

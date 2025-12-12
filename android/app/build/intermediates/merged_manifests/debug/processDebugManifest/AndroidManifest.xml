@@ -30,14 +30,24 @@
         android:testOnly="true"
         android:theme="@style/Theme.StressDetekt" >
         <activity
-            android:name="com.stress_detekt.MainActivity"
-            android:exported="true" >
+            android:name="com.stress_detekt.activities.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.stress_detekt.activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.stress_detekt.activities.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.stress_detekt.activities.MainActivity"
+            android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
@@ -53,6 +63,18 @@
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
                 android:value="androidx.startup" />
         </provider>
+
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
 
         <receiver
             android:name="androidx.profileinstaller.ProfileInstallReceiver"

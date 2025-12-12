@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.stress_detekt.app-mergeDebugResources-29:/values-v17/values-v17.xml",
+            "outputFile": "com.stress_detekt.app-mergeDebugResources-50:/values-v17/values-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\ef1c5911a6176a74f177b374325f64c4\\transformed\\appcompat-1.7.0\\res\\values-v17\\values-v17.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
