@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09f4f33e-f584-4dae-ad7a-72c830c0587a" name="Changes" comment="stress_sync_ok_android_start">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +135,7 @@
       <workItem from="1764508921079" duration="10445000" />
       <workItem from="1764759924241" duration="2099000" />
       <workItem from="1765301820790" duration="533000" />
-      <workItem from="1765545928169" duration="1564000" />
+      <workItem from="1765545928169" duration="2720000" />
     </task>
     <task id="LOCAL-00001" summary="start_stress_detect">
       <option name="closed" value="true" />
