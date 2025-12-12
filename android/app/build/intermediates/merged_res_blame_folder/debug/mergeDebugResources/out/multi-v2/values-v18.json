@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.stress_detekt.app-mergeDebugResources-29:/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\ef1c5911a6176a74f177b374325f64c4\\transformed\\appcompat-1.7.0\\res\\values-v18\\values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}
