@@ -24,6 +24,10 @@
         "source": "com.stress_detekt.app-main-54:/layout/activity_login.xml"
     },
     {
+        "merged": "com.stress_detekt.app-mergeDebugResources-51:/layout/fragment_settings.xml",
+        "source": "com.stress_detekt.app-main-54:/layout/fragment_settings.xml"
+    },
+    {
         "merged": "com.stress_detekt.app-mergeDebugResources-51:/layout/fragment_results.xml",
         "source": "com.stress_detekt.app-main-54:/layout/fragment_results.xml"
     }

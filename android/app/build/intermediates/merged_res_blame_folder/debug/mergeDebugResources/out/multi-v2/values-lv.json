@@ -4,6 +4,23 @@
             "outputFile": "com.stress_detekt.app-mergeDebugResources-50:/values-lv/values-lv.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-lv\\values-lv.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,169",
+                        "endColumns": "113,122",
+                        "endOffsets": "164,287"
+                    },
+                    "to": {
+                        "startLines": "112,113",
+                        "startColumns": "4,4",
+                        "startOffsets": "9802,9916",
+                        "endColumns": "113,122",
+                        "endOffsets": "9911,10034"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -18,23 +35,6 @@
                         "startOffsets": "3704,3802,3904,4004,4105,4212,4320,10436",
                         "endColumns": "97,101,99,100,106,107,114,100",
                         "endOffsets": "3797,3899,3999,4100,4207,4315,4430,10532"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-lv\\values-lv.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,169",
-                        "endColumns": "113,122",
-                        "endOffsets": "164,287"
-                    },
-                    "to": {
-                        "startLines": "112,113",
-                        "startColumns": "4,4",
-                        "startOffsets": "9802,9916",
-                        "endColumns": "113,122",
-                        "endOffsets": "9911,10034"
                     }
                 },
                 {

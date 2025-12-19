@@ -8,20 +8,48 @@
         "source": "com.stress_detekt.app-main-54:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.stress_detekt.app-debug-52:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.stress_detekt.app-main-54:/mipmap-mdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "com.stress_detekt.app-debug-52:/menu_bottom_nav_menu.xml.flat",
         "source": "com.stress_detekt.app-main-54:/menu/bottom_nav_menu.xml"
     },
     {
-        "merged": "com.stress_detekt.app-debug-52:/layout_activity_main.xml.flat",
-        "source": "com.stress_detekt.app-main-54:/layout/activity_main.xml"
-    },
-    {
         "merged": "com.stress_detekt.app-debug-52:/layout_fragment_terminal.xml.flat",
         "source": "com.stress_detekt.app-main-54:/layout/fragment_terminal.xml"
+    },
+    {
+        "merged": "com.stress_detekt.app-debug-52:/layout_activity_splash.xml.flat",
+        "source": "com.stress_detekt.app-main-54:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.stress_detekt.app-debug-52:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.stress_detekt.app-main-54:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.stress_detekt.app-debug-52:/layout_fragment_settings.xml.flat",
+        "source": "com.stress_detekt.app-main-54:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.stress_detekt.app-debug-52:/xml_data_extraction_rules.xml.flat",
+        "source": "com.stress_detekt.app-main-54:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.stress_detekt.app-debug-52:/mipmap-anydpi-v26_ic_launcher.png.flat",
+        "source": "com.stress_detekt.app-main-54:/mipmap-anydpi-v26/ic_launcher.png"
+    },
+    {
+        "merged": "com.stress_detekt.app-debug-52:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.stress_detekt.app-main-54:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.stress_detekt.app-debug-52:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.stress_detekt.app-main-54:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.stress_detekt.app-debug-52:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.stress_detekt.app-main-54:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.stress_detekt.app-debug-52:/layout_activity_main.xml.flat",
+        "source": "com.stress_detekt.app-main-54:/layout/activity_main.xml"
     },
     {
         "merged": "com.stress_detekt.app-debug-52:/mipmap-mdpi_ic_launcher.png.flat",
@@ -36,20 +64,8 @@
         "source": "com.stress_detekt.app-main-54:/layout/activity_register.xml"
     },
     {
-        "merged": "com.stress_detekt.app-debug-52:/layout_activity_splash.xml.flat",
-        "source": "com.stress_detekt.app-main-54:/layout/activity_splash.xml"
-    },
-    {
-        "merged": "com.stress_detekt.app-debug-52:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.stress_detekt.app-main-54:/mipmap-hdpi/ic_launcher.png"
-    },
-    {
         "merged": "com.stress_detekt.app-debug-52:/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "com.stress_detekt.app-main-54:/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "com.stress_detekt.app-debug-52:/xml_data_extraction_rules.xml.flat",
-        "source": "com.stress_detekt.app-main-54:/xml/data_extraction_rules.xml"
     },
     {
         "merged": "com.stress_detekt.app-debug-52:/mipmap-anydpi-v26_ic_launcher_round.png.flat",
@@ -72,23 +88,11 @@
         "source": "com.stress_detekt.app-main-54:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.stress_detekt.app-debug-52:/mipmap-anydpi-v26_ic_launcher.png.flat",
-        "source": "com.stress_detekt.app-main-54:/mipmap-anydpi-v26/ic_launcher.png"
-    },
-    {
         "merged": "com.stress_detekt.app-debug-52:/xml_backup_rules.xml.flat",
         "source": "com.stress_detekt.app-main-54:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.stress_detekt.app-debug-52:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.stress_detekt.app-main-54:/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "com.stress_detekt.app-debug-52:/navigation_nav_graph.xml.flat",
         "source": "com.stress_detekt.app-main-54:/navigation/nav_graph.xml"
-    },
-    {
-        "merged": "com.stress_detekt.app-debug-52:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.stress_detekt.app-main-54:/mipmap-xxhdpi/ic_launcher_round.png"
     }
 ]

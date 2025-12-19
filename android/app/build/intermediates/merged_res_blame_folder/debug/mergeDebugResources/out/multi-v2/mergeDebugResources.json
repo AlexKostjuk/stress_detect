@@ -53,7 +53,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-af\\values-af.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-af\\values-af.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -184,6 +184,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-hu\\values-hu.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,167",
+                        "endColumns": "111,119",
+                        "endOffsets": "162,282"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9526,9638",
+                        "endColumns": "111,119",
+                        "endOffsets": "9633,9753"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-hu\\values-hu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -215,23 +232,6 @@
                         "startOffsets": "313,421,513,628,712,827,950,1027,1102,1193,1286,1381,1475,1575,1668,1763,1858,1949,2040,2123,2233,2343,2443,2554,2663,2782,2964,9843",
                         "endColumns": "107,91,114,83,114,122,76,74,90,92,94,93,99,92,94,94,90,90,82,109,109,99,110,108,118,181,102,83",
                         "endOffsets": "416,508,623,707,822,945,1022,1097,1188,1281,1376,1470,1570,1663,1758,1853,1944,2035,2118,2228,2338,2438,2549,2658,2777,2959,3062,9922"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-hu\\values-hu.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,167",
-                        "endColumns": "111,119",
-                        "endOffsets": "162,282"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9526,9638",
-                        "endColumns": "111,119",
-                        "endOffsets": "9633,9753"
                     }
                 }
             ]
@@ -308,7 +308,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-or\\values-or.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-or\\values-or.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -382,7 +382,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-as\\values-as.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-as\\values-as.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -457,23 +457,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-hy\\values-hy.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,161",
-                        "endColumns": "105,116",
-                        "endOffsets": "156,273"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9487,9593",
-                        "endColumns": "105,116",
-                        "endOffsets": "9588,9705"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-hy\\values-hy.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -488,6 +471,23 @@
                         "startOffsets": "315,423,523,633,722,828,945,1027,1107,1198,1291,1386,1480,1580,1673,1768,1862,1953,2044,2127,2233,2339,2438,2548,2656,2757,2927,9795",
                         "endColumns": "107,99,109,88,105,116,81,79,90,92,94,93,99,92,94,93,90,90,82,105,105,98,109,107,100,169,96,82",
                         "endOffsets": "418,518,628,717,823,940,1022,1102,1193,1286,1381,1475,1575,1668,1763,1857,1948,2039,2122,2228,2334,2433,2543,2651,2752,2922,3019,9873"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-hy\\values-hy.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,161",
+                        "endColumns": "105,116",
+                        "endOffsets": "156,273"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9487,9593",
+                        "endColumns": "105,116",
+                        "endOffsets": "9588,9705"
                     }
                 }
             ]
@@ -530,23 +530,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-zh-rHK\\values-zh-rHK.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,154",
-                        "endColumns": "98,99",
-                        "endOffsets": "149,249"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "8479,8578",
-                        "endColumns": "98,99",
-                        "endOffsets": "8573,8673"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-zh-rHK\\values-zh-rHK.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -579,12 +562,46 @@
                         "endColumns": "91,98,93,93,92,92,95,100",
                         "endOffsets": "3282,3381,3475,3569,3662,3755,3851,9140"
                     }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-zh-rHK\\values-zh-rHK.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,154",
+                        "endColumns": "98,99",
+                        "endOffsets": "149,249"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "8479,8578",
+                        "endColumns": "98,99",
+                        "endOffsets": "8573,8673"
+                    }
                 }
             ]
         },
         {
             "outputFile": "com.stress_detekt.app-debug-52:/values-gu_values-gu.arsc.flat",
             "map": [
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-gu\\values-gu.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,165",
+                        "endColumns": "109,114",
+                        "endOffsets": "160,275"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9410,9520",
+                        "endColumns": "109,114",
+                        "endOffsets": "9515,9630"
+                    }
+                },
                 {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-gu\\values-gu.xml",
                     "from": {
@@ -620,23 +637,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-gu\\values-gu.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,165",
-                        "endColumns": "109,114",
-                        "endOffsets": "160,275"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9410,9520",
-                        "endColumns": "109,114",
-                        "endOffsets": "9515,9630"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\3944c8b0fffdab93bc1ebb93c9498559\\transformed\\material-1.12.0\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
@@ -661,6 +661,23 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-lv_values-lv.arsc.flat",
             "map": [
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-lv\\values-lv.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,169",
+                        "endColumns": "113,122",
+                        "endOffsets": "164,287"
+                    },
+                    "to": {
+                        "startLines": "112,113",
+                        "startColumns": "4,4",
+                        "startOffsets": "9802,9916",
+                        "endColumns": "113,122",
+                        "endOffsets": "9911,10034"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -675,23 +692,6 @@
                         "startOffsets": "3704,3802,3904,4004,4105,4212,4320,10436",
                         "endColumns": "97,101,99,100,106,107,114,100",
                         "endOffsets": "3797,3899,3999,4100,4207,4315,4430,10532"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-lv\\values-lv.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,169",
-                        "endColumns": "113,122",
-                        "endOffsets": "164,287"
-                    },
-                    "to": {
-                        "startLines": "112,113",
-                        "startColumns": "4,4",
-                        "startOffsets": "9802,9916",
-                        "endColumns": "113,122",
-                        "endOffsets": "9911,10034"
                     }
                 },
                 {
@@ -753,7 +753,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-bs\\values-bs.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-bs\\values-bs.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -826,23 +826,6 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-cs_values-cs.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-cs\\values-cs.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,163",
-                        "endColumns": "107,126",
-                        "endOffsets": "158,285"
-                    },
-                    "to": {
-                        "startLines": "113,114",
-                        "startColumns": "4,4",
-                        "startOffsets": "9536,9644",
-                        "endColumns": "107,126",
-                        "endOffsets": "9639,9766"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-cs\\values-cs.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -876,6 +859,23 @@
                         "endLines": "7,35,36,37,38,39,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,115,117,118,119",
                         "endColumns": "12,77,77,76,102,91,91,125,80,60,64,98,75,60,88,63,66,53,67,59,53,116,59,61,53,71,121,83,78,93,82,91,136,77,81,126,87,79,53,50,65,71,76,70,80,71,76,73,70,104,87,70,92,94,73,73,95,51,82,66,85,87,61,63,62,67,109,105,98,113,57,54,78,82,74,78",
                         "endOffsets": "413,3185,3263,3340,3443,3535,4358,4484,4565,4626,4691,4790,4866,4927,5016,5080,5147,5201,5269,5329,5383,5500,5560,5622,5676,5748,5870,5954,6033,6127,6210,6302,6439,6517,6599,6726,6814,6894,6948,6999,7065,7137,7214,7285,7366,7438,7515,7589,7660,7765,7853,7924,8017,8112,8186,8260,8356,8408,8491,8558,8644,8732,8794,8858,8921,8989,9099,9205,9304,9418,9476,9531,9845,10011,10086,10165"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-cs\\values-cs.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,163",
+                        "endColumns": "107,126",
+                        "endOffsets": "158,285"
+                    },
+                    "to": {
+                        "startLines": "113,114",
+                        "startColumns": "4,4",
+                        "startOffsets": "9536,9644",
+                        "endColumns": "107,126",
+                        "endOffsets": "9639,9766"
                     }
                 },
                 {
@@ -918,6 +918,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-el\\values-el.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,172",
+                        "endColumns": "116,121",
+                        "endOffsets": "167,289"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9723,9840",
+                        "endColumns": "116,121",
+                        "endOffsets": "9835,9957"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\3944c8b0fffdab93bc1ebb93c9498559\\transformed\\material-1.12.0\\res\\values-el\\values-el.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
@@ -934,23 +951,6 @@
                         "endLines": "5,33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,113,115,116,117",
                         "endColumns": "12,87,85,84,95,86,101,116,85,62,65,99,81,62,90,62,64,61,68,61,53,137,56,60,53,72,152,84,78,95,83,83,138,80,84,140,89,85,54,50,65,77,84,70,82,71,79,79,70,106,91,71,96,96,73,73,101,55,86,71,87,91,61,63,62,69,115,108,108,104,58,54,90,87,74,80",
                         "endOffsets": "315,3184,3270,3355,3451,3538,4375,4492,4578,4641,4707,4807,4889,4952,5043,5106,5171,5233,5302,5364,5418,5556,5613,5674,5728,5801,5954,6039,6118,6214,6298,6382,6521,6602,6687,6828,6918,7004,7059,7110,7176,7254,7339,7410,7493,7565,7645,7725,7796,7903,7995,8067,8164,8261,8335,8409,8511,8567,8654,8726,8814,8906,8968,9032,9095,9165,9281,9390,9499,9604,9663,9718,10048,10222,10297,10378"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-el\\values-el.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,172",
-                        "endColumns": "116,121",
-                        "endOffsets": "167,289"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9723,9840",
-                        "endColumns": "116,121",
-                        "endOffsets": "9835,9957"
                     }
                 },
                 {
@@ -1028,23 +1028,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-gl\\values-gl.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,173",
-                        "endColumns": "117,121",
-                        "endOffsets": "168,290"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9731,9849",
-                        "endColumns": "117,121",
-                        "endOffsets": "9844,9966"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-gl\\values-gl.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -1060,12 +1043,46 @@
                         "endColumns": "103,103,107,84,100,127,85,80,91,93,96,93,99,93,95,94,91,91,80,107,106,106,108,104,113,176,98,82",
                         "endOffsets": "424,528,636,721,822,950,1036,1117,1209,1303,1400,1494,1594,1688,1784,1879,1971,2063,2144,2252,2359,2466,2575,2680,2794,2971,3070,10134"
                     }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-gl\\values-gl.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,173",
+                        "endColumns": "117,121",
+                        "endOffsets": "168,290"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9731,9849",
+                        "endColumns": "117,121",
+                        "endOffsets": "9844,9966"
+                    }
                 }
             ]
         },
         {
             "outputFile": "com.stress_detekt.app-debug-52:/values-te_values-te.arsc.flat",
             "map": [
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-te\\values-te.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,168",
+                        "endColumns": "112,122",
+                        "endOffsets": "163,286"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9654,9767",
+                        "endColumns": "112,122",
+                        "endOffsets": "9762,9885"
+                    }
+                },
                 {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-te\\values-te.xml",
                     "from": {
@@ -1081,23 +1098,6 @@
                         "startOffsets": "3530,3632,3740,3842,3943,4049,4156,10305",
                         "endColumns": "101,107,101,100,105,106,123,100",
                         "endOffsets": "3627,3735,3837,3938,4044,4151,4275,10401"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-te\\values-te.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,168",
-                        "endColumns": "112,122",
-                        "endOffsets": "163,286"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9654,9767",
-                        "endColumns": "112,122",
-                        "endOffsets": "9762,9885"
                     }
                 },
                 {
@@ -1195,7 +1195,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-km\\values-km.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-km\\values-km.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -1217,7 +1217,7 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-mr_values-mr.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-mr\\values-mr.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-mr\\values-mr.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -1343,7 +1343,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-be\\values-be.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-be\\values-be.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -1416,7 +1416,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-da\\values-da.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-da\\values-da.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -1542,7 +1542,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-sk\\values-sk.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-sk\\values-sk.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -1600,6 +1600,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-bn\\values-bn.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,167",
+                        "endColumns": "111,116",
+                        "endOffsets": "162,279"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9509,9621",
+                        "endColumns": "111,116",
+                        "endOffsets": "9616,9733"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-bn\\values-bn.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -1631,23 +1648,6 @@
                         "startOffsets": "3518,3617,3719,3821,3924,4025,4127,10140",
                         "endColumns": "98,101,101,102,100,101,119,100",
                         "endOffsets": "3612,3714,3816,3919,4020,4122,4242,10236"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-bn\\values-bn.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,167",
-                        "endColumns": "111,116",
-                        "endOffsets": "162,279"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9509,9621",
-                        "endColumns": "111,116",
-                        "endOffsets": "9616,9733"
                     }
                 }
             ]
@@ -1692,23 +1692,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-ar\\values-ar.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,165",
-                        "endColumns": "109,110",
-                        "endOffsets": "160,271"
-                    },
-                    "to": {
-                        "startLines": "115,116",
-                        "startColumns": "4,4",
-                        "startOffsets": "9604,9714",
-                        "endColumns": "109,110",
-                        "endOffsets": "9709,9820"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-ar\\values-ar.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -1723,6 +1706,23 @@
                         "startOffsets": "515,623,727,834,916,1017,1131,1211,1290,1381,1474,1566,1660,1760,1853,1948,2041,2132,2226,2305,2410,2508,2606,2714,2814,2917,3072,9905",
                         "endColumns": "107,103,106,81,100,113,79,78,90,92,91,93,99,92,94,92,90,93,78,104,97,97,107,99,102,154,96,81",
                         "endOffsets": "618,722,829,911,1012,1126,1206,1285,1376,1469,1561,1655,1755,1848,1943,2036,2127,2221,2300,2405,2503,2601,2709,2809,2912,3067,3164,9982"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-ar\\values-ar.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,165",
+                        "endColumns": "109,110",
+                        "endOffsets": "160,271"
+                    },
+                    "to": {
+                        "startLines": "115,116",
+                        "startColumns": "4,4",
+                        "startOffsets": "9604,9714",
+                        "endColumns": "109,110",
+                        "endOffsets": "9709,9820"
                     }
                 }
             ]
@@ -1763,7 +1763,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-mn\\values-mn.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-mn\\values-mn.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -1852,6 +1852,23 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-fr-rCA_values-fr-rCA.arsc.flat",
             "map": [
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-fr-rCA\\values-fr-rCA.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,168",
+                        "endColumns": "112,125",
+                        "endOffsets": "163,289"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9709,9822",
+                        "endColumns": "112,125",
+                        "endOffsets": "9817,9943"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\3944c8b0fffdab93bc1ebb93c9498559\\transformed\\material-1.12.0\\res\\values-fr-rCA\\values-fr-rCA.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
@@ -1903,23 +1920,6 @@
                         "endColumns": "110,106,109,86,105,129,84,79,90,92,97,94,99,92,92,94,90,90,85,109,110,102,110,107,106,158,98,86",
                         "endOffsets": "439,546,656,743,849,979,1064,1144,1235,1328,1426,1521,1621,1714,1807,1902,1993,2084,2170,2280,2391,2494,2605,2713,2820,2979,3078,10119"
                     }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-fr-rCA\\values-fr-rCA.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,168",
-                        "endColumns": "112,125",
-                        "endOffsets": "163,289"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9709,9822",
-                        "endColumns": "112,125",
-                        "endOffsets": "9817,9943"
-                    }
                 }
             ]
         },
@@ -1927,7 +1927,7 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-de_values-de.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-de\\values-de.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-de\\values-de.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -2002,7 +2002,7 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-b+sr+Latn_values-b+sr+Latn.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -2092,7 +2092,7 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-pt-rBR_values-pt-rBR.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-pt-rBR\\values-pt-rBR.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -2220,7 +2220,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-in\\values-in.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-in\\values-in.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -2288,7 +2288,7 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-vi_values-vi.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-vi\\values-vi.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-vi\\values-vi.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -2436,6 +2436,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-iw\\values-iw.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,161",
+                        "endColumns": "105,119",
+                        "endOffsets": "156,276"
+                    },
+                    "to": {
+                        "startLines": "112,113",
+                        "startColumns": "4,4",
+                        "startOffsets": "9191,9297",
+                        "endColumns": "105,119",
+                        "endOffsets": "9292,9412"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-iw\\values-iw.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -2450,23 +2467,6 @@
                         "startOffsets": "3437,3531,3633,3730,3827,3928,4028,9807",
                         "endColumns": "93,101,96,96,100,99,105,100",
                         "endOffsets": "3526,3628,3725,3822,3923,4023,4129,9903"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-iw\\values-iw.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,161",
-                        "endColumns": "105,119",
-                        "endOffsets": "156,276"
-                    },
-                    "to": {
-                        "startLines": "112,113",
-                        "startColumns": "4,4",
-                        "startOffsets": "9191,9297",
-                        "endColumns": "105,119",
-                        "endOffsets": "9292,9412"
                     }
                 },
                 {
@@ -2541,7 +2541,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-en-rIN\\values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -2616,7 +2616,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-nl\\values-nl.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-nl\\values-nl.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -2691,7 +2691,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-ms\\values-ms.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-ms\\values-ms.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -2764,7 +2764,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-fa\\values-fa.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-fa\\values-fa.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -2841,6 +2841,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-uk\\values-uk.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,163",
+                        "endColumns": "107,119",
+                        "endOffsets": "158,278"
+                    },
+                    "to": {
+                        "startLines": "113,114",
+                        "startColumns": "4,4",
+                        "startOffsets": "9617,9725",
+                        "endColumns": "107,119",
+                        "endOffsets": "9720,9840"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-uk\\values-uk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -2855,23 +2872,6 @@
                         "startOffsets": "3596,3696,3798,3899,4000,4105,4210,10247",
                         "endColumns": "99,101,100,100,104,104,112,100",
                         "endOffsets": "3691,3793,3894,3995,4100,4205,4318,10343"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-uk\\values-uk.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,163",
-                        "endColumns": "107,119",
-                        "endOffsets": "158,278"
-                    },
-                    "to": {
-                        "startLines": "113,114",
-                        "startColumns": "4,4",
-                        "startOffsets": "9617,9725",
-                        "endColumns": "107,119",
-                        "endOffsets": "9720,9840"
                     }
                 },
                 {
@@ -2916,7 +2916,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-tr\\values-tr.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-tr\\values-tr.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -2972,7 +2972,7 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-kn_values-kn.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-kn\\values-kn.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-kn\\values-kn.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -3047,7 +3047,7 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-ru_values-ru.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-ru\\values-ru.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-ru\\values-ru.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -3161,23 +3161,6 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-th_values-th.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-th\\values-th.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,159",
-                        "endColumns": "103,113",
-                        "endOffsets": "154,268"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9252,9356",
-                        "endColumns": "103,113",
-                        "endOffsets": "9351,9465"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-th\\values-th.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -3211,6 +3194,23 @@
                         "endLines": "5,33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,113,115,116,117",
                         "endColumns": "12,72,71,82,84,85,98,112,79,67,69,89,69,59,86,65,64,60,63,60,53,100,60,59,53,69,110,86,76,86,81,80,142,78,81,131,91,77,53,52,65,69,77,70,79,71,77,68,68,97,81,87,92,93,73,68,94,51,82,67,84,87,61,63,62,69,99,95,96,92,57,56,76,81,74,75",
                         "endOffsets": "330,3032,3104,3187,3272,3358,4172,4285,4365,4433,4503,4593,4663,4723,4810,4876,4941,5002,5066,5127,5181,5282,5343,5403,5457,5527,5638,5725,5802,5889,5971,6052,6195,6274,6356,6488,6580,6658,6712,6765,6831,6901,6979,7050,7130,7202,7280,7349,7418,7516,7598,7686,7779,7873,7947,8016,8111,8163,8246,8314,8399,8487,8549,8613,8676,8746,8846,8942,9039,9132,9190,9247,9542,9706,9781,9857"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-th\\values-th.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,159",
+                        "endColumns": "103,113",
+                        "endOffsets": "154,268"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9252,9356",
+                        "endColumns": "103,113",
+                        "endOffsets": "9351,9465"
                     }
                 },
                 {
@@ -3253,7 +3253,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-ko\\values-ko.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-ko\\values-ko.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -3330,6 +3330,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-mk\\values-mk.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,160",
+                        "endColumns": "104,127",
+                        "endOffsets": "155,283"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9531,9636",
+                        "endColumns": "104,127",
+                        "endOffsets": "9631,9759"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-mk\\values-mk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -3344,23 +3361,6 @@
                         "startOffsets": "3465,3563,3665,3762,3860,3965,4068,10189",
                         "endColumns": "97,101,96,97,104,102,115,100",
                         "endOffsets": "3558,3660,3757,3855,3960,4063,4179,10285"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-mk\\values-mk.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,160",
-                        "endColumns": "104,127",
-                        "endOffsets": "155,283"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9531,9636",
-                        "endColumns": "104,127",
-                        "endOffsets": "9631,9759"
                     }
                 },
                 {
@@ -3403,7 +3403,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-lo\\values-lo.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-lo\\values-lo.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -3538,23 +3538,6 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-es-rUS_values-es-rUS.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-es-rUS\\values-es-rUS.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,170",
-                        "endColumns": "114,127",
-                        "endOffsets": "165,293"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9641,9756",
-                        "endColumns": "114,127",
-                        "endOffsets": "9751,9879"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-es-rUS\\values-es-rUS.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -3586,6 +3569,23 @@
                         "startOffsets": "328,448,557,665,750,852,968,1053,1133,1224,1317,1412,1506,1605,1698,1797,1893,1984,2075,2157,2264,2363,2462,2570,2678,2785,2944,9967",
                         "endColumns": "119,108,107,84,101,115,84,79,90,92,94,93,98,92,98,95,90,90,81,106,98,98,107,107,106,158,99,82",
                         "endOffsets": "443,552,660,745,847,963,1048,1128,1219,1312,1407,1501,1600,1693,1792,1888,1979,2070,2152,2259,2358,2457,2565,2673,2780,2939,3039,10045"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-es-rUS\\values-es-rUS.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,170",
+                        "endColumns": "114,127",
+                        "endOffsets": "165,293"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9641,9756",
+                        "endColumns": "114,127",
+                        "endOffsets": "9751,9879"
                     }
                 },
                 {
@@ -3628,23 +3628,6 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-sq_values-sq.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-sq\\values-sq.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,161",
-                        "endColumns": "105,118",
-                        "endOffsets": "156,275"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9550,9656",
-                        "endColumns": "105,118",
-                        "endOffsets": "9651,9770"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\3944c8b0fffdab93bc1ebb93c9498559\\transformed\\material-1.12.0\\res\\values-sq\\values-sq.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
@@ -3681,6 +3664,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-sq\\values-sq.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,161",
+                        "endColumns": "105,118",
+                        "endOffsets": "156,275"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9550,9656",
+                        "endColumns": "105,118",
+                        "endOffsets": "9651,9770"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-sq\\values-sq.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -3702,23 +3702,6 @@
         {
             "outputFile": "com.stress_detekt.app-debug-52:/values-fi_values-fi.arsc.flat",
             "map": [
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-fi\\values-fi.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,161",
-                        "endColumns": "105,122",
-                        "endOffsets": "156,279"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9348,9454",
-                        "endColumns": "105,122",
-                        "endOffsets": "9449,9572"
-                    }
-                },
                 {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-fi\\values-fi.xml",
                     "from": {
@@ -3771,12 +3754,46 @@
                         "endColumns": "95,101,97,104,104,111,115,100",
                         "endOffsets": "3483,3585,3683,3788,3893,4005,4121,10073"
                     }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-fi\\values-fi.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,161",
+                        "endColumns": "105,122",
+                        "endOffsets": "156,279"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9348,9454",
+                        "endColumns": "105,122",
+                        "endOffsets": "9449,9572"
+                    }
                 }
             ]
         },
         {
             "outputFile": "com.stress_detekt.app-debug-52:/values-ja_values-ja.arsc.flat",
             "map": [
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,154",
+                        "endColumns": "98,109",
+                        "endOffsets": "149,259"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "8613,8712",
+                        "endColumns": "98,109",
+                        "endOffsets": "8707,8817"
+                    }
+                },
                 {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-ja\\values-ja.xml",
                     "from": {
@@ -3792,23 +3809,6 @@
                         "startOffsets": "303,400,493,598,680,778,886,964,1039,1130,1223,1318,1412,1512,1605,1700,1794,1885,1976,2054,2156,2254,2349,2452,2548,2644,2792,8895",
                         "endColumns": "96,92,104,81,97,107,77,74,90,92,94,93,99,92,94,93,90,90,77,101,97,94,102,95,95,147,96,78",
                         "endOffsets": "395,488,593,675,773,881,959,1034,1125,1218,1313,1407,1507,1600,1695,1789,1880,1971,2049,2151,2249,2344,2447,2543,2639,2787,2884,8969"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-ja\\values-ja.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,154",
-                        "endColumns": "98,109",
-                        "endOffsets": "149,259"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "8613,8712",
-                        "endColumns": "98,109",
-                        "endOffsets": "8707,8817"
                     }
                 },
                 {
@@ -3889,23 +3889,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-uz\\values-uz.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,156",
-                        "endColumns": "100,121",
-                        "endOffsets": "151,273"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9497,9598",
-                        "endColumns": "100,121",
-                        "endOffsets": "9593,9715"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-uz\\values-uz.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -3920,6 +3903,23 @@
                         "startOffsets": "333,438,533,633,715,815,932,1017,1095,1186,1279,1374,1468,1562,1655,1750,1845,1936,2028,2112,2222,2328,2428,2536,2642,2744,2905,9803",
                         "endColumns": "104,94,99,81,99,116,84,77,90,92,94,93,93,92,94,94,90,91,83,109,105,99,107,105,101,160,98,83",
                         "endOffsets": "433,528,628,710,810,927,1012,1090,1181,1274,1369,1463,1557,1650,1745,1840,1931,2023,2107,2217,2323,2423,2531,2637,2739,2900,2999,9882"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-uz\\values-uz.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,156",
+                        "endColumns": "100,121",
+                        "endOffsets": "151,273"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9497,9598",
+                        "endColumns": "100,121",
+                        "endOffsets": "9593,9715"
                     }
                 }
             ]
@@ -3964,6 +3964,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-pl\\values-pl.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,163",
+                        "endColumns": "107,116",
+                        "endOffsets": "158,275"
+                    },
+                    "to": {
+                        "startLines": "113,114",
+                        "startColumns": "4,4",
+                        "startOffsets": "9617,9725",
+                        "endColumns": "107,116",
+                        "endOffsets": "9720,9837"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-pl\\values-pl.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -3978,23 +3995,6 @@
                         "startOffsets": "436,551,653,761,847,954,1073,1152,1228,1319,1412,1507,1601,1702,1795,1890,1985,2076,2167,2249,2358,2458,2557,2666,2778,2889,3052,9918",
                         "endColumns": "114,101,107,85,106,118,78,75,90,92,94,93,100,92,94,94,90,90,81,108,99,98,108,111,110,162,95,82",
                         "endOffsets": "546,648,756,842,949,1068,1147,1223,1314,1407,1502,1596,1697,1790,1885,1980,2071,2162,2244,2353,2453,2552,2661,2773,2884,3047,3143,9996"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-pl\\values-pl.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,163",
-                        "endColumns": "107,116",
-                        "endOffsets": "158,275"
-                    },
-                    "to": {
-                        "startLines": "113,114",
-                        "startColumns": "4,4",
-                        "startOffsets": "9617,9725",
-                        "endColumns": "107,116",
-                        "endOffsets": "9720,9837"
                     }
                 }
             ]
@@ -4039,7 +4039,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-is\\values-is.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-is\\values-is.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -4097,6 +4097,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-nb\\values-nb.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,161",
+                        "endColumns": "105,113",
+                        "endOffsets": "156,270"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9202,9308",
+                        "endColumns": "105,113",
+                        "endOffsets": "9303,9417"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-nb\\values-nb.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -4111,23 +4128,6 @@
                         "startOffsets": "311,414,509,623,709,809,922,999,1074,1165,1258,1352,1446,1546,1639,1734,1832,1923,2014,2092,2195,2293,2389,2493,2592,2693,2846,9500",
                         "endColumns": "102,94,113,85,99,112,76,74,90,92,93,93,99,92,94,97,90,90,77,102,97,95,103,98,100,152,96,79",
                         "endOffsets": "409,504,618,704,804,917,994,1069,1160,1253,1347,1441,1541,1634,1729,1827,1918,2009,2087,2190,2288,2384,2488,2587,2688,2841,2938,9575"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-nb\\values-nb.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,161",
-                        "endColumns": "105,113",
-                        "endOffsets": "156,270"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9202,9308",
-                        "endColumns": "105,113",
-                        "endOffsets": "9303,9417"
                     }
                 },
                 {
@@ -4170,7 +4170,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-az\\values-az.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-az\\values-az.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -4264,7 +4264,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-ka\\values-ka.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-ka\\values-ka.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -4320,23 +4320,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-am\\values-am.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,159",
-                        "endColumns": "103,109",
-                        "endOffsets": "154,264"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "8914,9018",
-                        "endColumns": "103,109",
-                        "endOffsets": "9013,9123"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\3944c8b0fffdab93bc1ebb93c9498559\\transformed\\material-1.12.0\\res\\values-am\\values-am.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
@@ -4353,6 +4336,23 @@
                         "endLines": "5,33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,113,115,116,117",
                         "endColumns": "12,70,67,74,81,80,88,101,76,58,63,84,61,57,84,62,61,57,65,61,54,95,56,58,55,66,104,79,80,91,84,80,128,72,70,113,81,75,50,50,65,65,72,70,74,67,72,70,66,97,84,66,86,87,73,67,84,50,77,63,79,81,61,63,62,65,94,94,84,90,54,54,75,78,74,70",
                         "endOffsets": "306,2995,3063,3138,3220,3301,4077,4179,4256,4315,4379,4464,4526,4584,4669,4732,4794,4852,4918,4980,5035,5131,5188,5247,5303,5370,5475,5555,5636,5728,5813,5894,6023,6096,6167,6281,6363,6439,6490,6541,6607,6673,6746,6817,6892,6960,7033,7104,7171,7269,7354,7421,7508,7596,7670,7738,7823,7874,7952,8016,8096,8178,8240,8304,8367,8433,8528,8623,8708,8799,8854,8909,9199,9358,9433,9504"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-am\\values-am.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,159",
+                        "endColumns": "103,109",
+                        "endOffsets": "154,264"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "8914,9018",
+                        "endColumns": "103,109",
+                        "endOffsets": "9013,9123"
                     }
                 },
                 {
@@ -4397,6 +4397,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-lt\\values-lt.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,165",
+                        "endColumns": "109,118",
+                        "endOffsets": "160,279"
+                    },
+                    "to": {
+                        "startLines": "113,114",
+                        "startColumns": "4,4",
+                        "startOffsets": "9766,9876",
+                        "endColumns": "109,118",
+                        "endOffsets": "9871,9990"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-lt\\values-lt.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -4428,23 +4445,6 @@
                         "startOffsets": "3618,3716,3826,3925,4028,4139,4249,10401",
                         "endColumns": "97,109,98,102,110,109,119,100",
                         "endOffsets": "3711,3821,3920,4023,4134,4244,4364,10497"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-lt\\values-lt.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,165",
-                        "endColumns": "109,118",
-                        "endOffsets": "160,279"
-                    },
-                    "to": {
-                        "startLines": "113,114",
-                        "startColumns": "4,4",
-                        "startOffsets": "9766,9876",
-                        "endColumns": "109,118",
-                        "endOffsets": "9871,9990"
                     }
                 }
             ]
@@ -4540,7 +4540,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-zh-rTW\\values-zh-rTW.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -4577,7 +4577,7 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-sl_values-sl.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-sl\\values-sl.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-sl\\values-sl.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -4702,23 +4702,6 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-my_values-my.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-my\\values-my.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,168",
-                        "endColumns": "112,125",
-                        "endOffsets": "163,289"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9621,9734",
-                        "endColumns": "112,125",
-                        "endOffsets": "9729,9855"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-my\\values-my.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -4733,6 +4716,23 @@
                         "startOffsets": "3547,3650,3754,3857,3959,4064,4170,10273",
                         "endColumns": "102,103,102,101,104,105,118,100",
                         "endOffsets": "3645,3749,3852,3954,4059,4165,4284,10369"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-my\\values-my.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,168",
+                        "endColumns": "112,125",
+                        "endOffsets": "163,289"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9621,9734",
+                        "endColumns": "112,125",
+                        "endOffsets": "9729,9855"
                     }
                 },
                 {
@@ -4891,23 +4891,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-tl\\values-tl.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,169",
-                        "endColumns": "113,122",
-                        "endOffsets": "164,287"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9706,9820",
-                        "endColumns": "113,122",
-                        "endOffsets": "9815,9938"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-tl\\values-tl.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -4941,6 +4924,23 @@
                         "endLines": "5,33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,113,115,116,117",
                         "endColumns": "12,83,79,85,96,89,104,135,84,59,64,98,67,58,88,67,66,62,74,67,53,119,57,61,53,74,141,89,77,93,82,84,144,83,82,145,95,76,57,50,65,73,77,70,85,73,78,72,71,115,103,72,98,99,73,74,106,51,88,66,90,93,61,63,62,69,118,104,108,99,61,54,84,86,77,74",
                         "endOffsets": "325,3149,3229,3315,3412,3502,4341,4477,4562,4622,4687,4786,4854,4913,5002,5070,5137,5200,5275,5343,5397,5517,5575,5637,5691,5766,5908,5998,6076,6170,6253,6338,6483,6567,6650,6796,6892,6969,7027,7078,7144,7218,7296,7367,7453,7527,7606,7679,7751,7867,7971,8044,8143,8243,8317,8392,8499,8551,8640,8707,8798,8892,8954,9018,9081,9151,9270,9375,9484,9584,9646,9701,10023,10195,10273,10348"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-tl\\values-tl.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,169",
+                        "endColumns": "113,122",
+                        "endOffsets": "164,287"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9706,9820",
+                        "endColumns": "113,122",
+                        "endOffsets": "9815,9938"
                     }
                 }
             ]
@@ -5002,7 +5002,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-ml\\values-ml.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -5041,7 +5041,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -5167,7 +5167,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-es\\values-es.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-es\\values-es.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -5223,23 +5223,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-si\\values-si.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,166",
-                        "endColumns": "110,116",
-                        "endOffsets": "161,278"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9394,9505",
-                        "endColumns": "110,116",
-                        "endOffsets": "9500,9617"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\3944c8b0fffdab93bc1ebb93c9498559\\transformed\\material-1.12.0\\res\\values-si\\values-si.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
@@ -5256,6 +5239,23 @@
                         "endLines": "5,33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,113,115,116,117",
                         "endColumns": "12,75,76,77,90,84,101,114,82,60,63,88,66,59,93,63,62,55,69,66,54,118,56,63,53,72,121,82,82,92,85,84,131,77,79,121,85,83,59,51,65,69,72,70,76,71,76,71,69,112,92,72,89,92,73,71,90,53,79,65,83,84,61,63,62,65,104,104,94,100,63,55,79,84,74,75",
                         "endOffsets": "314,3106,3183,3261,3352,3437,4271,4386,4469,4530,4594,4683,4750,4810,4904,4968,5031,5087,5157,5224,5279,5398,5455,5519,5573,5646,5768,5851,5934,6027,6113,6198,6330,6408,6488,6610,6696,6780,6840,6892,6958,7028,7101,7172,7249,7321,7398,7470,7540,7653,7746,7819,7909,8002,8076,8148,8239,8293,8373,8439,8523,8608,8670,8734,8797,8863,8968,9073,9168,9269,9333,9389,9697,9864,9939,10015"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-si\\values-si.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,166",
+                        "endColumns": "110,116",
+                        "endOffsets": "161,278"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9394,9505",
+                        "endColumns": "110,116",
+                        "endOffsets": "9500,9617"
                     }
                 }
             ]
@@ -5313,6 +5313,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,156",
+                        "endColumns": "100,102",
+                        "endOffsets": "151,254"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "8473,8574",
+                        "endColumns": "100,102",
+                        "endOffsets": "8569,8672"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\3944c8b0fffdab93bc1ebb93c9498559\\transformed\\material-1.12.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
@@ -5329,23 +5346,6 @@
                         "endLines": "5,33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,113,115,116,117",
                         "endColumns": "12,63,61,69,69,76,90,105,72,50,61,76,58,58,77,60,56,55,58,57,53,84,55,57,53,64,91,73,71,78,73,75,121,61,61,98,78,73,49,50,65,63,68,70,70,60,70,66,59,85,78,66,82,84,73,64,75,47,72,63,75,77,61,63,62,64,79,75,77,75,53,54,68,74,72,69",
                         "endOffsets": "292,2913,2975,3045,3115,3192,3947,4053,4126,4177,4239,4316,4375,4434,4512,4573,4630,4686,4745,4803,4857,4942,4998,5056,5110,5175,5267,5341,5413,5492,5566,5642,5764,5826,5888,5987,6066,6140,6190,6241,6307,6371,6440,6511,6582,6643,6714,6781,6841,6927,7006,7073,7156,7241,7315,7380,7456,7504,7577,7641,7717,7795,7857,7921,7984,8049,8129,8205,8283,8359,8413,8468,8741,8895,8968,9038"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-zh-rCN\\values-zh-rCN.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,156",
-                        "endColumns": "100,102",
-                        "endOffsets": "151,254"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "8473,8574",
-                        "endColumns": "100,102",
-                        "endOffsets": "8569,8672"
                     }
                 }
             ]
@@ -5390,7 +5390,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-sr\\values-sr.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-sr\\values-sr.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -5465,7 +5465,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-ky\\values-ky.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-ky\\values-ky.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -5537,7 +5537,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-eu\\values-eu.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-eu\\values-eu.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -5595,23 +5595,6 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-ca_values-ca.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-ca\\values-ca.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,166",
-                        "endColumns": "110,121",
-                        "endOffsets": "161,283"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9696,9807",
-                        "endColumns": "110,121",
-                        "endOffsets": "9802,9924"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-ca\\values-ca.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -5626,6 +5609,23 @@
                         "startOffsets": "324,447,552,659,742,848,974,1058,1137,1228,1321,1414,1509,1607,1700,1793,1887,1978,2069,2150,2261,2369,2467,2577,2682,2790,2950,10015",
                         "endColumns": "122,104,106,82,105,125,83,78,90,92,92,94,97,92,92,93,90,90,80,110,107,97,109,104,107,159,98,81",
                         "endOffsets": "442,547,654,737,843,969,1053,1132,1223,1316,1409,1504,1602,1695,1788,1882,1973,2064,2145,2256,2364,2462,2572,2677,2785,2945,3044,10092"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-ca\\values-ca.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,166",
+                        "endColumns": "110,121",
+                        "endOffsets": "161,283"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9696,9807",
+                        "endColumns": "110,121",
+                        "endOffsets": "9802,9924"
                     }
                 },
                 {
@@ -5723,7 +5723,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -5798,7 +5798,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-bg\\values-bg.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-bg\\values-bg.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -5856,7 +5856,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-kk\\values-kk.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-kk\\values-kk.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -5912,6 +5912,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-sv\\values-sv.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,164",
+                        "endColumns": "108,118",
+                        "endOffsets": "159,278"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9317,9426",
+                        "endColumns": "108,118",
+                        "endOffsets": "9421,9540"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-sv\\values-sv.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -5926,23 +5943,6 @@
                         "startOffsets": "316,419,522,633,717,817,930,1007,1082,1175,1270,1365,1459,1561,1656,1753,1851,1947,2040,2120,2226,2325,2421,2526,2629,2731,2885,9623",
                         "endColumns": "102,102,110,83,99,112,76,74,92,94,94,93,101,94,96,97,95,92,79,105,98,95,104,102,101,153,101,79",
                         "endOffsets": "414,517,628,712,812,925,1002,1077,1170,1265,1360,1454,1556,1651,1748,1846,1942,2035,2115,2221,2320,2416,2521,2624,2726,2880,2982,9698"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-sv\\values-sv.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,164",
-                        "endColumns": "108,118",
-                        "endOffsets": "159,278"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9317,9426",
-                        "endColumns": "108,118",
-                        "endOffsets": "9421,9540"
                     }
                 },
                 {
@@ -5969,6 +5969,23 @@
         {
             "outputFile": "com.stress_detekt.app-debug-52:/values-en-rAU_values-en-rAU.arsc.flat",
             "map": [
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,161",
+                        "endColumns": "105,116",
+                        "endOffsets": "156,273"
+                    },
+                    "to": {
+                        "startLines": "36,37",
+                        "startColumns": "4,4",
+                        "startOffsets": "3481,3587",
+                        "endColumns": "105,116",
+                        "endOffsets": "3582,3699"
+                    }
+                },
                 {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
@@ -6001,23 +6018,6 @@
                         "startOffsets": "2762,2858,2960,3059,3158,3262,3365,3787",
                         "endColumns": "95,101,98,98,103,102,115,100",
                         "endOffsets": "2853,2955,3054,3153,3257,3360,3476,3883"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-en-rAU\\values-en-rAU.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,161",
-                        "endColumns": "105,116",
-                        "endOffsets": "156,273"
-                    },
-                    "to": {
-                        "startLines": "36,37",
-                        "startColumns": "4,4",
-                        "startOffsets": "3481,3587",
-                        "endColumns": "105,116",
-                        "endOffsets": "3582,3699"
                     }
                 }
             ]
@@ -6079,7 +6079,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-ne\\values-ne.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-ne\\values-ne.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -6154,7 +6154,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-pa\\values-pa.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-pa\\values-pa.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -6175,6 +6175,25 @@
         {
             "outputFile": "com.stress_detekt.app-debug-52:/values_values.arsc.flat",
             "map": [
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\ffdcdc404792853822da7282afae3d5a\\transformed\\navigation-runtime-2.7.7\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,10,13",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,108,412,527",
+                        "endLines": "2,9,12,15",
+                        "endColumns": "52,24,24,24",
+                        "endOffsets": "103,407,522,637"
+                    },
+                    "to": {
+                        "startLines": "1832,9378,12509,12515",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "121739,646695,763605,763847",
+                        "endLines": "1832,9384,12511,12517",
+                        "endColumns": "52,24,24,24",
+                        "endOffsets": "121787,646994,763715,763957"
+                    }
+                },
                 {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\bf9c3c98ee34ddecf9b1834e58d11d62\\transformed\\lifecycle-viewmodel-release\\res\\values\\values.xml",
                     "from": {
@@ -6248,39 +6267,22 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\67dd838f3f41cf082d038e498a9aea30\\transformed\\navigation-runtime-2.8.5\\res\\values\\values.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\4acbb45d513518b4864dacbd53e572cb\\transformed\\navigation-fragment-2.7.7\\res\\values\\values.xml",
                     "from": {
-                        "startLines": "2,3,10,13",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,108,412,527",
-                        "endLines": "2,9,12,15",
-                        "endColumns": "52,24,24,24",
-                        "endOffsets": "103,407,522,637"
+                        "startLines": "2,3,4,5,6,9,12",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,118,175,234,283,399,509",
+                        "endLines": "2,3,4,5,8,11,14",
+                        "endColumns": "62,56,58,48,24,24,24",
+                        "endOffsets": "113,170,229,278,394,504,631"
                     },
                     "to": {
-                        "startLines": "1832,9378,12509,12515",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "121739,646695,763605,763847",
-                        "endLines": "1832,9384,12511,12517",
-                        "endColumns": "52,24,24,24",
-                        "endOffsets": "121787,646994,763715,763957"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,108,165,241",
-                        "endColumns": "52,56,75,86",
-                        "endOffsets": "103,160,236,323"
-                    },
-                    "to": {
-                        "startLines": "1898,2013,2130,2131",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "125249,133951,150515,150591",
-                        "endColumns": "52,56,75,86",
-                        "endOffsets": "125297,134003,150586,150673"
+                        "startLines": "1764,1833,1848,1849,11347,11524,12512",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "117717,121792,122607,122666,720304,726449,763720",
+                        "endLines": "1764,1833,1848,1849,11349,11526,12514",
+                        "endColumns": "62,56,58,48,24,24,24",
+                        "endOffsets": "117775,121844,122661,122710,720415,726554,763842"
                     }
                 },
                 {
@@ -6357,6 +6359,23 @@
                         "endLines": "8,9,15,17,25,26,28,29,36,42,44,45,46,47,48,105,106,107,108,113,114,115,116,128,136,139,167,172,173,178,183,184,185,190,191,196,197,202,203,204,210,211,212,217,223,224,225,239,245,246,247,248,251,254,257,258,261,264,265,266,267,268,271,274,275,276,277,283,288,291,294,295,296,301,302,303,306,309,310,313,316,319,322,323,324,327,330,331,336,337,343,348,351,354,355,356,357,358,359,360,361,362,363,364,365,381,387,463,464,465,466,477,483,484,485,488,493,494,503,504,505,526,541,578,579,583,592,595,596,602,603,611,615,616,617,618,619,628,632,1825,1887,10811,10939,10945,10949,11098,11243,11346,11581,11617,11640,11643,11646,11649,11676,11703,11720,11806,12390,12403,12419,12423,12453,12466,12470,12480,12682,12726,12748,13039,13062,13269,13663,13698,13705,13770,13773",
                         "endColumns": "11,55,11,60,11,51,49,52,47,50,54,59,64,58,61,51,60,61,45,11,51,49,50,11,11,44,58,11,56,11,11,53,56,11,57,11,55,11,56,50,11,51,54,11,11,49,51,55,11,60,59,69,11,11,11,67,11,11,61,62,67,66,11,11,66,64,64,11,11,11,11,65,66,11,68,65,11,11,66,11,11,11,11,55,64,11,11,64,11,66,11,11,11,11,64,61,61,63,61,58,59,60,60,58,59,11,11,50,48,47,57,11,11,46,59,11,11,53,11,53,55,45,46,50,58,51,11,58,53,11,54,11,11,45,54,44,43,11,11,40,44,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24",
                         "endOffsets": "429,485,727,837,1128,1180,1285,1338,1735,2045,2169,2229,2294,2353,2415,5591,5652,5714,5760,5954,6006,6056,6107,6624,6936,7092,9048,9245,9302,9497,9678,9732,9789,9981,10039,10235,10291,10485,10542,10593,10815,10867,10922,11112,11328,11378,11430,12183,12389,12450,12510,12580,12713,12844,12972,13040,13169,13295,13357,13420,13488,13555,13678,13803,13870,13935,14000,14289,14470,14591,14712,14778,14845,15055,15124,15190,15315,15441,15508,15634,15761,15886,16013,16069,16134,16260,16383,16448,16656,16723,17011,17191,17311,17431,17496,17558,17620,17684,17746,17805,17865,17926,17987,18046,18106,18766,19017,23760,23809,23857,23915,24436,24666,24713,24773,24879,25059,25113,25506,25560,25616,26771,27455,29789,29848,30050,30380,30545,30599,30837,30892,31217,31356,31402,31457,31502,31546,31894,32031,121397,124659,697312,702977,703352,703519,708749,714875,720299,728154,729602,730472,730538,730617,730692,731476,732367,733186,737123,758375,758846,759637,759800,761161,761725,761878,762337,769173,771186,771862,782053,782711,790634,805188,806609,806962,809668,809769"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,108,165,241",
+                        "endColumns": "52,56,75,86",
+                        "endOffsets": "103,160,236,323"
+                    },
+                    "to": {
+                        "startLines": "1898,2013,2130,2131",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "125249,133951,150515,150591",
+                        "endColumns": "52,56,75,86",
+                        "endOffsets": "125297,134003,150586,150673"
                     }
                 },
                 {
@@ -6538,6 +6557,25 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\c6713fe9e2d0089cc28e77e1aeef2df5\\transformed\\navigation-common-2.7.7\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,15,21,27,30",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,694,938,1185,1318",
+                        "endLines": "14,20,26,29,34",
+                        "endColumns": "24,24,24,24,24",
+                        "endOffsets": "689,933,1180,1313,1495"
+                    },
+                    "to": {
+                        "startLines": "12481,12494,12500,12506,12668",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "762342,762981,763225,763472,768578",
+                        "endLines": "12493,12499,12505,12508,12672",
+                        "endColumns": "24,24,24,24,24",
+                        "endOffsets": "762976,763220,763467,763600,768755"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\PycharmProjects\\stress_detect\\android\\app\\src\\main\\res\\values\\themes.xml",
                     "from": {
                         "startLines": "1",
@@ -6576,25 +6614,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\11c3ba088069c96f4800187f3b1eb076\\transformed\\navigation-fragment-2.8.5\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,9,12",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,118,175,234,283,399,509",
-                        "endLines": "2,3,4,5,8,11,14",
-                        "endColumns": "62,56,58,48,24,24,24",
-                        "endOffsets": "113,170,229,278,394,504,631"
-                    },
-                    "to": {
-                        "startLines": "1764,1833,1848,1849,11347,11524,12512",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "117717,121792,122607,122666,720304,726449,763720",
-                        "endLines": "1764,1833,1848,1849,11349,11526,12514",
-                        "endColumns": "62,56,58,48,24,24,24",
-                        "endOffsets": "117775,121844,122661,122710,720415,726554,763842"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\1d5d7a285ae1a0810e285b1e031b335d\\transformed\\cardview-1.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,35,36,37,38,45,47,50,7",
@@ -6612,48 +6631,12 @@
                         "endColumns": "51,60,61,61,63,58,56,53,12,12,12,12,24",
                         "endOffsets": "1687,34065,34127,34189,34253,62481,62538,62592,156181,390111,390237,390365,678078"
                     }
-                },
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\6ceb1e654951a2de398fa3286b7345f4\\transformed\\navigation-common-2.8.5\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,15,21,27,30",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,694,938,1185,1318",
-                        "endLines": "14,20,26,29,34",
-                        "endColumns": "24,24,24,24,24",
-                        "endOffsets": "689,933,1180,1313,1495"
-                    },
-                    "to": {
-                        "startLines": "12481,12494,12500,12506,12668",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "762342,762981,763225,763472,768578",
-                        "endLines": "12493,12499,12505,12508,12672",
-                        "endColumns": "24,24,24,24,24",
-                        "endOffsets": "762976,763220,763467,763600,768755"
-                    }
                 }
             ]
         },
         {
             "outputFile": "com.stress_detekt.app-debug-52:/values-hi_values-hi.arsc.flat",
             "map": [
-                {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-hi\\values-hi.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,159",
-                        "endColumns": "103,113",
-                        "endOffsets": "154,268"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9531,9635",
-                        "endColumns": "103,113",
-                        "endOffsets": "9630,9744"
-                    }
-                },
                 {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-hi\\values-hi.xml",
                     "from": {
@@ -6691,6 +6674,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-hi\\values-hi.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,159",
+                        "endColumns": "103,113",
+                        "endOffsets": "154,268"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9531,9635",
+                        "endColumns": "103,113",
+                        "endOffsets": "9630,9744"
+                    }
+                },
+                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-hi\\values-hi.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -6713,7 +6713,7 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-zu_values-zu.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-zu\\values-zu.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-zu\\values-zu.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -6841,7 +6841,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-sw\\values-sw.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-sw\\values-sw.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -6880,7 +6880,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-ro\\values-ro.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-ro\\values-ro.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -6972,7 +6972,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-en-rGB\\values-en-rGB.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-en-rGB\\values-en-rGB.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -7013,23 +7013,6 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-pt_values-pt.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-pt\\values-pt.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,167",
-                        "endColumns": "111,119",
-                        "endOffsets": "162,282"
-                    },
-                    "to": {
-                        "startLines": "36,37",
-                        "startColumns": "4,4",
-                        "startOffsets": "3578,3690",
-                        "endColumns": "111,119",
-                        "endOffsets": "3685,3805"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-pt\\values-pt.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -7044,6 +7027,23 @@
                         "startOffsets": "2843,2940,3042,3141,3241,3348,3458,3896",
                         "endColumns": "96,101,98,99,106,109,119,100",
                         "endOffsets": "2935,3037,3136,3236,3343,3453,3573,3992"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-pt\\values-pt.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,167",
+                        "endColumns": "111,119",
+                        "endOffsets": "162,282"
+                    },
+                    "to": {
+                        "startLines": "36,37",
+                        "startColumns": "4,4",
+                        "startOffsets": "3578,3690",
+                        "endColumns": "111,119",
+                        "endOffsets": "3685,3805"
                     }
                 },
                 {
@@ -7122,7 +7122,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-hr\\values-hr.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-hr\\values-hr.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -7144,23 +7144,6 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-ta_values-ta.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-ta\\values-ta.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,163",
-                        "endColumns": "107,126",
-                        "endOffsets": "158,285"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9758,9866",
-                        "endColumns": "107,126",
-                        "endOffsets": "9861,9988"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\00164ad1463a0eeb78bfbd3bd189ef0e\\transformed\\appcompat-1.7.0\\res\\values-ta\\values-ta.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -7175,6 +7158,23 @@
                         "startOffsets": "322,435,537,652,741,852,973,1052,1128,1226,1326,1421,1515,1622,1722,1824,1918,2016,2114,2195,2303,2406,2505,2621,2724,2829,2986,10079",
                         "endColumns": "112,101,114,88,110,120,78,75,97,99,94,93,106,99,101,93,97,97,80,107,102,98,115,102,104,156,101,81",
                         "endOffsets": "430,532,647,736,847,968,1047,1123,1221,1321,1416,1510,1617,1717,1819,1913,2011,2109,2190,2298,2401,2500,2616,2719,2824,2981,3083,10156"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-ta\\values-ta.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,163",
+                        "endColumns": "107,126",
+                        "endOffsets": "158,285"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9758,9866",
+                        "endColumns": "107,126",
+                        "endOffsets": "9861,9988"
                     }
                 },
                 {
@@ -7219,7 +7219,7 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-et_values-et.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-et\\values-et.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-et\\values-et.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -7294,7 +7294,7 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-ur_values-ur.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-ur\\values-ur.xml",
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-ur\\values-ur.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -7369,23 +7369,6 @@
             "outputFile": "com.stress_detekt.app-debug-52:/values-fr_values-fr.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\0cff2add8414a14bdd3f9cac9a7eead7\\transformed\\navigation-ui-2.8.5\\res\\values-fr\\values-fr.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,158",
-                        "endColumns": "102,125",
-                        "endOffsets": "153,279"
-                    },
-                    "to": {
-                        "startLines": "111,112",
-                        "startColumns": "4,4",
-                        "startOffsets": "9645,9748",
-                        "endColumns": "102,125",
-                        "endOffsets": "9743,9869"
-                    }
-                },
-                {
                     "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\8c3b96f2c7f338ae54f9989833e1249b\\transformed\\core-1.13.1\\res\\values-fr\\values-fr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -7400,6 +7383,23 @@
                         "startOffsets": "3523,3621,3723,3822,3924,4028,4132,10295",
                         "endColumns": "97,101,98,101,103,103,117,100",
                         "endOffsets": "3616,3718,3817,3919,4023,4127,4245,10391"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vlvov\\.gradle\\caches\\8.9\\transforms\\9cdd179863b7902131e8466244560c90\\transformed\\navigation-ui-2.7.7\\res\\values-fr\\values-fr.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,158",
+                        "endColumns": "102,125",
+                        "endOffsets": "153,279"
+                    },
+                    "to": {
+                        "startLines": "111,112",
+                        "startColumns": "4,4",
+                        "startOffsets": "9645,9748",
+                        "endColumns": "102,125",
+                        "endOffsets": "9743,9869"
                     }
                 },
                 {

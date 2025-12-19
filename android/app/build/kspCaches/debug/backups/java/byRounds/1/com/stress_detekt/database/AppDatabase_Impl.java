@@ -28,20 +28,24 @@ import javax.annotation.processing.Generated;
 public final class AppDatabase_Impl extends AppDatabase {
   private volatile UserDao _userDao;
 
+  private volatile SensorDao _sensorDao;
+
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(1) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(3) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `email` TEXT NOT NULL, `password` TEXT NOT NULL, `name` TEXT NOT NULL, `createdAt` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `sensor_data` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` INTEGER NOT NULL, `accelX` REAL, `accelY` REAL, `accelZ` REAL, `accelMagnitude` REAL, `gyroX` REAL, `gyroY` REAL, `gyroZ` REAL, `magX` REAL, `magY` REAL, `magZ` REAL, `lightLevel` REAL, `proximityDistance` REAL, `pressure` REAL, `altitude` REAL, `temperature` REAL, `humidity` REAL, `heartRate` REAL, `stepCount` INTEGER, `gravityX` REAL, `gravityY` REAL, `gravityZ` REAL, `rotationX` REAL, `rotationY` REAL, `rotationZ` REAL, `latitude` REAL, `longitude` REAL, `gpsSpeed` REAL, `gpsAccuracy` REAL, `gpsAltitude` REAL, `activityType` TEXT NOT NULL, `timestamp` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2655de6f0794fd6d3d1a10ccded61e07')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '28995d12fa41b064a31dcb350f2a3411')");
       }
 
       @Override
       public void dropAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("DROP TABLE IF EXISTS `users`");
+        db.execSQL("DROP TABLE IF EXISTS `sensor_data`");
         final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
         if (_callbacks != null) {
           for (RoomDatabase.Callback _callback : _callbacks) {
@@ -100,9 +104,52 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoUsers + "\n"
                   + " Found:\n" + _existingUsers);
         }
+        final HashMap<String, TableInfo.Column> _columnsSensorData = new HashMap<String, TableInfo.Column>(33);
+        _columnsSensorData.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("userId", new TableInfo.Column("userId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("accelX", new TableInfo.Column("accelX", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("accelY", new TableInfo.Column("accelY", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("accelZ", new TableInfo.Column("accelZ", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("accelMagnitude", new TableInfo.Column("accelMagnitude", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("gyroX", new TableInfo.Column("gyroX", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("gyroY", new TableInfo.Column("gyroY", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("gyroZ", new TableInfo.Column("gyroZ", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("magX", new TableInfo.Column("magX", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("magY", new TableInfo.Column("magY", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("magZ", new TableInfo.Column("magZ", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("lightLevel", new TableInfo.Column("lightLevel", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("proximityDistance", new TableInfo.Column("proximityDistance", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("pressure", new TableInfo.Column("pressure", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("altitude", new TableInfo.Column("altitude", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("temperature", new TableInfo.Column("temperature", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("humidity", new TableInfo.Column("humidity", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("heartRate", new TableInfo.Column("heartRate", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("stepCount", new TableInfo.Column("stepCount", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("gravityX", new TableInfo.Column("gravityX", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("gravityY", new TableInfo.Column("gravityY", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("gravityZ", new TableInfo.Column("gravityZ", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("rotationX", new TableInfo.Column("rotationX", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("rotationY", new TableInfo.Column("rotationY", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("rotationZ", new TableInfo.Column("rotationZ", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("latitude", new TableInfo.Column("latitude", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("longitude", new TableInfo.Column("longitude", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("gpsSpeed", new TableInfo.Column("gpsSpeed", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("gpsAccuracy", new TableInfo.Column("gpsAccuracy", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("gpsAltitude", new TableInfo.Column("gpsAltitude", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("activityType", new TableInfo.Column("activityType", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSensorData.put("timestamp", new TableInfo.Column("timestamp", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysSensorData = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesSensorData = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoSensorData = new TableInfo("sensor_data", _columnsSensorData, _foreignKeysSensorData, _indicesSensorData);
+        final TableInfo _existingSensorData = TableInfo.read(db, "sensor_data");
+        if (!_infoSensorData.equals(_existingSensorData)) {
+          return new RoomOpenHelper.ValidationResult(false, "sensor_data(com.stress_detekt.database.SensorData).\n"
+                  + " Expected:\n" + _infoSensorData + "\n"
+                  + " Found:\n" + _existingSensorData);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "2655de6f0794fd6d3d1a10ccded61e07", "33fca4eeed21046cb347bf0650821a8b");
+    }, "28995d12fa41b064a31dcb350f2a3411", "2e3901aa37e54092f548dc4b8f385964");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
@@ -113,7 +160,7 @@ public final class AppDatabase_Impl extends AppDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "users");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "users","sensor_data");
   }
 
   @Override
@@ -123,6 +170,7 @@ public final class AppDatabase_Impl extends AppDatabase {
     try {
       super.beginTransaction();
       _db.execSQL("DELETE FROM `users`");
+      _db.execSQL("DELETE FROM `sensor_data`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -138,6 +186,7 @@ public final class AppDatabase_Impl extends AppDatabase {
   protected Map<Class<?>, List<Class<?>>> getRequiredTypeConverters() {
     final HashMap<Class<?>, List<Class<?>>> _typeConvertersMap = new HashMap<Class<?>, List<Class<?>>>();
     _typeConvertersMap.put(UserDao.class, UserDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(SensorDao.class, SensorDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -166,6 +215,20 @@ public final class AppDatabase_Impl extends AppDatabase {
           _userDao = new UserDao_Impl(this);
         }
         return _userDao;
+      }
+    }
+  }
+
+  @Override
+  public SensorDao sensorDao() {
+    if (_sensorDao != null) {
+      return _sensorDao;
+    } else {
+      synchronized(this) {
+        if(_sensorDao == null) {
+          _sensorDao = new SensorDao_Impl(this);
+        }
+        return _sensorDao;
       }
     }
   }

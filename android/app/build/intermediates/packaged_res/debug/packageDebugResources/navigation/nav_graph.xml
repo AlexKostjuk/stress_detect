@@ -25,4 +25,9 @@
         android:name="com.stress_detekt.fragments.ResultsFragment"
         android:label="Results" />
 
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.stress_detekt.fragments.SettingsFragment"
+        android:label="Settings" />
+
 </navigation>
