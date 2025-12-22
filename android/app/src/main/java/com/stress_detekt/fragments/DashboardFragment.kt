@@ -1,37 +1,60 @@
 package com.stress_detekt.fragments
 
-import android.content.Intent
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.stress_detekt.activities.LoginActivity
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import com.stress_detekt.R
 import com.stress_detekt.activities.MainActivity
 import com.stress_detekt.databinding.FragmentDashboardBinding
 import com.stress_detekt.services.MultiSensorService
-import com.stress_detekt.utils.PrefsManager
-import com.stress_detekt.utils.SensorPreferences
+import com.stress_detekt.testing.AutoTestRunner
+import com.stress_detekt.viewmodels.TerminalViewModel
 
+/**
+ * DashboardFragment - Головний екран моніторингу
+ *
+ * Відповідає за:
+ * - Відображення даних з датчиків в реальному часі
+ * - Керування моніторингом (Start/Stop)
+ * - Автоматичне тестування через Terminal
+ * - Статистика збору даних
+ *
+ * Шлях: app/src/main/java/com/stress_detekt/fragments/DashboardFragment.kt
+ */
 class DashboardFragment : Fragment() {
 
     private var _binding: FragmentDashboardBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var prefsManager: PrefsManager
-    private lateinit var sensorPrefs: SensorPreferences
+    // Sensor service (з MainActivity)
+    private lateinit var sensorService: MultiSensorService
 
-    // Отримуємо сервіс з MainActivity
-    private val sensorService: MultiSensorService
-        get() = (requireActivity() as MainActivity).sensorService
+    // Test runner для автоматичних тестів
+    private var testRunner: AutoTestRunner? = null
 
-    private var isMonitoring = false
+    // ViewModel для Terminal output
+    private val terminalViewModel: TerminalViewModel by viewModels()
 
-    companion object {
-        private const val KEY_IS_MONITORING = "isMonitoring"
-        private const val KEY_USER_ID = "userId"
-        private const val REQUEST_ACTIVITY_RECOGNITION = 100
+    // Поточний user ID (пізніше буде з auth)
+    private val userId = 1L
+
+    // Permission launcher для Activity Recognition (Step Counter)
+    private val activityRecognitionPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (isGranted) {
+            terminalViewModel.addOutput("✅ Activity Recognition permission granted")
+        } else {
+            terminalViewModel.addOutput("❌ Activity Recognition permission denied")
+        }
     }
 
     override fun onCreateView(
@@ -46,288 +69,328 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        prefsManager = PrefsManager(requireContext())
-        sensorPrefs = SensorPreferences(requireContext())
+        // Ініціалізація
+        initializeSensorService()
+        initializeTestRunner()
+        setupButtons()
+        setupObservers()
 
-        setupUI()
-        setupListeners()
-        observeSensorData()
+        // Перевірити permissions
+        checkPermissions()
 
-        restoreStateIfNeeded(savedInstanceState)
+        // Привітання в Terminal
+        terminalViewModel.addOutput("═══════════════════════════════════════")
+        terminalViewModel.addOutput("  📱 STRESS DETEKT DASHBOARD")
+        terminalViewModel.addOutput("═══════════════════════════════════════")
+        terminalViewModel.addOutput("Terminal ready. Press a button to start.")
+        terminalViewModel.addOutput("")
     }
 
-    private fun setupUI() {
-        val userName = prefsManager.getUserName() ?: "Користувач"
-        binding.tvWelcome.text = "Вітаємо, $userName!"
-
-        val enabledCount = sensorPrefs.getEnabledCount()
-        binding.tvInfo.text = "Увімкнено датчиків: $enabledCount\n\n" +
-                "Натисніть 'Почати' для збору даних\n" +
-                "або перейдіть в Settings для налаштувань"
-
-        // Відновлюємо стан UI з сервісу
-        isMonitoring = sensorService.isMonitoring.value ?: false
-        updateMonitoringButton()
+    /**
+     * Ініціалізувати SensorService з MainActivity
+     */
+    private fun initializeSensorService() {
+        val mainActivity = requireActivity() as MainActivity
+        sensorService = mainActivity.getSensorService()
     }
 
-    private fun setupListeners() {
-        binding.btnMonitoring.setOnClickListener {
-            if (isMonitoring) {
-                stopMonitoring()
-            } else {
-                startMonitoring()
+    /**
+     * Ініціалізувати AutoTestRunner
+     */
+    private fun initializeTestRunner() {
+        testRunner = AutoTestRunner(sensorService) { output ->
+            terminalViewModel.addOutput(output)
+        }
+    }
+
+    /**
+     * Налаштувати кнопки
+     */
+    private fun setupButtons() {
+        // ═══════════════════════════════════════════════════════════════════
+        // MONITORING CONTROLS
+        // ═══════════════════════════════════════════════════════════════════
+
+        binding.btnStartMonitoring.setOnClickListener {
+            terminalViewModel.addOutput("▶️  Starting monitoring...")
+            sensorService.startMonitoring(userId)
+
+            // Оновити UI
+            updateMonitoringStatus()
+        }
+
+        binding.btnStopMonitoring.setOnClickListener {
+            terminalViewModel.addOutput("⏹️  Stopping monitoring...")
+            sensorService.stopMonitoring()
+
+            // Оновити UI
+            updateMonitoringStatus()
+        }
+
+        // ═══════════════════════════════════════════════════════════════════
+        // TEST CONTROLS
+        // ═══════════════════════════════════════════════════════════════════
+
+        binding.btnRunAllTests.setOnClickListener {
+            terminalViewModel.clear()
+            testRunner?.runAllTests()
+        }
+
+        binding.btnQuickTest.setOnClickListener {
+            terminalViewModel.clear()
+            testRunner?.runQuickTest()
+        }
+
+        binding.btnBufferTest.setOnClickListener {
+            terminalViewModel.clear()
+            testRunner?.runBufferTest()
+        }
+
+        binding.btnConfigTest.setOnClickListener {
+            terminalViewModel.clear()
+            testRunner?.runConfigTest()
+        }
+
+        binding.btnStatusTest.setOnClickListener {
+            terminalViewModel.clear()
+            testRunner?.runStatusTest()
+        }
+
+        // ═══════════════════════════════════════════════════════════════════
+        // TERMINAL CONTROLS
+        // ═══════════════════════════════════════════════════════════════════
+
+        binding.btnClearTerminal.setOnClickListener {
+            terminalViewModel.clear()
+            terminalViewModel.addOutput("Terminal cleared.")
+        }
+
+        // ═══════════════════════════════════════════════════════════════════
+        // STATISTICS
+        // ═══════════════════════════════════════════════════════════════════
+
+        binding.btnShowStats.setOnClickListener {
+            showCollectionStatistics()
+        }
+
+        binding.btnShowBuffer.setOnClickListener {
+            showBufferStatistics()
+        }
+    }
+
+    /**
+     * Налаштувати Observers
+     */
+    private fun setupObservers() {
+        // Observe sensor data для real-time display
+        sensorService.sensorDataLive.observe(viewLifecycleOwner, Observer { data ->
+            updateSensorDisplay(data)
+        })
+
+        // Observe monitoring status
+        sensorService.isMonitoring.observe(viewLifecycleOwner, Observer { isMonitoring ->
+            updateMonitoringStatus()
+        })
+
+        // Observe terminal output
+        terminalViewModel.output.observe(viewLifecycleOwner, Observer { lines ->
+            // Оновити TextView
+            binding.terminalTextView.text = lines.joinToString("\n")
+
+            // Автоскрол вниз
+            binding.terminalScrollView.post {
+                binding.terminalScrollView.fullScroll(View.FOCUS_DOWN)
             }
-        }
-
-        binding.btnLogout.setOnClickListener {
-            if (isMonitoring) {
-                stopMonitoring()
-            }
-            showLogoutDialog()
-        }
-
-        binding.btnExit.setOnClickListener {
-            showExitDialog()
-        }
+        })
     }
 
-    private fun observeSensorData() {
-        sensorService.sensorDataLive.observe(viewLifecycleOwner) { reading ->
-            if (!isMonitoring) return@observe
+    /**
+     * Оновити відображення sensor data
+     */
+    private fun updateSensorDisplay(data: MultiSensorService.AllSensorReading) {
+        // Accelerometer
+        binding.tvAccelX.text = String.format("%.2f", data.accelX)
+        binding.tvAccelY.text = String.format("%.2f", data.accelY)
+        binding.tvAccelZ.text = String.format("%.2f", data.accelZ)
+        binding.tvAccelMagnitude.text = String.format("%.2f m/s²", data.accelMagnitude)
 
-            binding.tvInfo.text = buildString {
-                append("📊 Real-time дані:\n")
-                append("Увімкнено: ${reading.enabledSensorsCount} датчиків\n\n")
+        // Activity
+        binding.tvActivity.text = data.activityType
 
-                if (sensorPrefs.isAccelerometerEnabled() && reading.accelMagnitude > 0) {
-                    append("Accelerometer:\n")
-                    append("  X: ${String.format("%.2f", reading.accelX)} m/s²\n")
-                    append("  Y: ${String.format("%.2f", reading.accelY)} m/s²\n")
-                    append("  Z: ${String.format("%.2f", reading.accelZ)} m/s²\n")
-                    append("  Magnitude: ${String.format("%.2f", reading.accelMagnitude)} m/s²\n")
-                    append("  Activity: ${reading.activityType}\n\n")
-                }
-
-                if (sensorPrefs.isGyroscopeEnabled() && reading.gyroX != null) {
-                    append("Gyroscope:\n")
-                    append("  X: ${String.format("%.2f", reading.gyroX)} rad/s\n")
-                    append("  Y: ${String.format("%.2f", reading.gyroY)} rad/s\n")
-                    append("  Z: ${String.format("%.2f", reading.gyroZ)} rad/s\n\n")
-                }
-
-                if (sensorPrefs.isMagnetometerEnabled() && reading.magX != null) {
-                    append("Magnetometer:\n")
-                    append("  X: ${String.format("%.1f", reading.magX)} µT\n")
-                    append("  Y: ${String.format("%.1f", reading.magY)} µT\n")
-                    append("  Z: ${String.format("%.1f", reading.magZ)} µT\n\n")
-                }
-
-                if (sensorPrefs.isLightEnabled() && reading.lightLevel != null) {
-                    append("Light: ${String.format("%.1f", reading.lightLevel)} lux\n")
-                }
-
-                if (sensorPrefs.isProximityEnabled() && reading.proximityDistance != null) {
-                    append("Proximity: ${String.format("%.1f", reading.proximityDistance)} cm\n")
-                }
-
-                if (sensorPrefs.isPressureEnabled() && reading.pressure != null) {
-                    append("Pressure: ${String.format("%.1f", reading.pressure)} hPa\n")
-                }
-
-                if (sensorPrefs.isTemperatureEnabled() && reading.temperature != null) {
-                    append("Temperature: ${String.format("%.1f", reading.temperature)}°C\n")
-                }
-
-                if (sensorPrefs.isHumidityEnabled() && reading.humidity != null) {
-                    append("Humidity: ${String.format("%.1f", reading.humidity)}%\n")
-                }
-
-                if (sensorPrefs.isGravityEnabled() && reading.gravityX != null) {
-                    append("Gravity:\n")
-                    append("  X: ${String.format("%.2f", reading.gravityX)} m/s²\n")
-                    append("  Y: ${String.format("%.2f", reading.gravityY)} m/s²\n")
-                    append("  Z: ${String.format("%.2f", reading.gravityZ)} m/s²\n\n")
-                }
-
-                if (sensorPrefs.isRotationEnabled() && reading.rotationX != null) {
-                    append("Rotation:\n")
-                    append("  X: ${String.format("%.3f", reading.rotationX)}\n")
-                    append("  Y: ${String.format("%.3f", reading.rotationY)}\n")
-                    append("  Z: ${String.format("%.3f", reading.rotationZ)}\n\n")
-                }
-
-                if (sensorPrefs.isStepCounterEnabled() && reading.stepsSinceStart != null) {
-                    append("Steps (session): ${reading.stepsSinceStart}\n")
-                    append("Steps (total): ${reading.stepCount}\n")
-                }
-
-                append("\nData points: ${reading.dataPoints}")
-            }
-        }
-
-        sensorService.isMonitoring.observe(viewLifecycleOwner) { monitoring ->
-            isMonitoring = monitoring
-            updateMonitoringButton()
-
-            if (!monitoring && _binding != null) {
-                val enabledCount = sensorPrefs.getEnabledCount()
-                binding.tvInfo.text = "Увімкнено датчиків: $enabledCount\n\n" +
-                        "Натисніть 'Почати' для збору даних"
-            }
-        }
-    }
-
-    private fun restoreStateIfNeeded(savedInstanceState: Bundle?) {
-        savedInstanceState?.let { bundle ->
-            val wasMonitoring = bundle.getBoolean(KEY_IS_MONITORING, false)
-            val userId = bundle.getLong(KEY_USER_ID, -1L)
-
-            if (wasMonitoring && userId != -1L && !isMonitoring) {
-                sensorService.startMonitoring(userId)
-                binding.tvInfo.text = "Відновлення моніторингу після повороту екрану...\n\n" +
-                        "Дані збираються ✓"
-            }
-        }
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putBoolean(KEY_IS_MONITORING, isMonitoring)
-        outState.putLong(KEY_USER_ID, prefsManager.getUserId())
-    }
-
-    private fun updateMonitoringButton() {
-        if (isMonitoring) {
-            binding.btnMonitoring.text = "⏹ ЗУПИНИТИ ВИМІРЮВАННЯ"
-            binding.tvStatus.text = "Статус: Збір даних активний"
-            binding.tvStatus.setTextColor(resources.getColor(android.R.color.holo_green_dark, null))
+        // Gyroscope
+        if (data.gyroX != null) {
+            binding.tvGyroX.text = String.format("%.2f", data.gyroX)
+            binding.tvGyroY.text = String.format("%.2f", data.gyroY)
+            binding.tvGyroZ.text = String.format("%.2f", data.gyroZ)
         } else {
-            binding.btnMonitoring.text = "▶ ПОЧАТИ ВИМІРЮВАННЯ"
-            binding.tvStatus.text = "Статус: Неактивно"
-            binding.tvStatus.setTextColor(resources.getColor(android.R.color.darker_gray, null))
+            binding.tvGyroX.text = "N/A"
+            binding.tvGyroY.text = "N/A"
+            binding.tvGyroZ.text = "N/A"
         }
+
+        // Magnetometer
+        if (data.magX != null) {
+            binding.tvMagX.text = String.format("%.2f", data.magX)
+            binding.tvMagY.text = String.format("%.2f", data.magY)
+            binding.tvMagZ.text = String.format("%.2f", data.magZ)
+        } else {
+            binding.tvMagX.text = "N/A"
+            binding.tvMagY.text = "N/A"
+            binding.tvMagZ.text = "N/A"
+        }
+
+        // Environment
+        binding.tvLight.text = data.lightLevel?.let { String.format("%.1f lux", it) } ?: "N/A"
+        binding.tvProximity.text = data.proximityDistance?.let { String.format("%.1f cm", it) } ?: "N/A"
+        binding.tvPressure.text = data.pressure?.let { String.format("%.1f hPa", it) } ?: "N/A"
+        binding.tvTemperature.text = data.temperature?.let { String.format("%.1f °C", it) } ?: "N/A"
+        binding.tvHumidity.text = data.humidity?.let { String.format("%.1f %%", it) } ?: "N/A"
+
+        // Biometric
+        binding.tvHeartRate.text = data.heartRate?.let { String.format("%.0f BPM", it) } ?: "N/A"
+        binding.tvSteps.text = data.stepsSinceStart?.toString() ?: "N/A"
+
+        // Gravity
+        if (data.gravityX != null) {
+            binding.tvGravityX.text = String.format("%.2f", data.gravityX)
+            binding.tvGravityY.text = String.format("%.2f", data.gravityY)
+            binding.tvGravityZ.text = String.format("%.2f", data.gravityZ)
+        } else {
+            binding.tvGravityX.text = "N/A"
+            binding.tvGravityY.text = "N/A"
+            binding.tvGravityZ.text = "N/A"
+        }
+
+        // Rotation
+        if (data.rotationX != null) {
+            binding.tvRotationX.text = String.format("%.2f", data.rotationX)
+            binding.tvRotationY.text = String.format("%.2f", data.rotationY)
+            binding.tvRotationZ.text = String.format("%.2f", data.rotationZ)
+        } else {
+            binding.tvRotationX.text = "N/A"
+            binding.tvRotationY.text = "N/A"
+            binding.tvRotationZ.text = "N/A"
+        }
+
+        // Metadata
+        binding.tvDataPoints.text = data.dataPoints.toString()
+        binding.tvEnabledSensors.text = data.enabledSensorsCount.toString()
     }
 
-    private fun startMonitoring() {
-        val userId = prefsManager.getUserId()
-        if (userId == -1L) {
-            binding.tvInfo.text = "Помилка: користувач не знайдений"
-            return
-        }
+    /**
+     * Оновити статус моніторингу
+     */
+    private fun updateMonitoringStatus() {
+        val isMonitoring = sensorService.isMonitoring.value ?: false
 
-        val enabledCount = sensorPrefs.getEnabledCount()
-        if (enabledCount == 0) {
-            AlertDialog.Builder(requireContext())
-                .setTitle("Немає увімкнених датчиків")
-                .setMessage("Увімкніть хоча б один датчик в Settings")
-                .setPositiveButton("OK", null)
-                .show()
-            return
-        }
-
-        // Перевірка дозволу для Step Counter
-        if (sensorPrefs.isStepCounterEnabled()) {
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
-                if (requireContext().checkSelfPermission(android.Manifest.permission.ACTIVITY_RECOGNITION)
-                    != android.content.pm.PackageManager.PERMISSION_GRANTED) {
-                    // Запитуємо дозвіл
-                    requestPermissions(
-                        arrayOf(android.Manifest.permission.ACTIVITY_RECOGNITION),
-                        REQUEST_ACTIVITY_RECOGNITION
-                    )
-                    return
-                }
-            }
-        }
-
-        sensorService.startMonitoring(userId)
-        println("✓ DashboardFragment: startMonitoring() called")
-    }
-
-
-
-    private fun stopMonitoring() {
-        println("✓ DashboardFragment: stopMonitoring() called")
-
-        sensorService.stopMonitoring()
-
-        val userId = prefsManager.getUserId()
-        sensorService.getAverageActivity(userId) { activity ->
-            requireActivity().runOnUiThread {
-                if (_binding != null) {
-                    binding.tvInfo.text = "Вимірювання зупинено.\n\n" +
-                            "Середня активність за сесію:\n$activity\n\n" +
-                            "Дані збережені в БД ✓"
-                }
-            }
-        }
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-
-        if (requestCode == REQUEST_ACTIVITY_RECOGNITION) {
-            if (grantResults.isNotEmpty() && grantResults[0] == android.content.pm.PackageManager.PERMISSION_GRANTED) {
-                // Дозвіл надано, запускаємо моніторинг
-                val userId = prefsManager.getUserId()
-                sensorService.startMonitoring(userId)
-                println("✓ ACTIVITY_RECOGNITION permission granted")
-            } else {
-                // Дозвіл відхилено
-                AlertDialog.Builder(requireContext())
-                    .setTitle("Дозвіл відхилено")
-                    .setMessage("Для роботи Step Counter потрібен дозвіл ACTIVITY_RECOGNITION.\n\nStep Counter буде вимкнено.")
-                    .setPositiveButton("OK") { _, _ ->
-                        // Вимикаємо Step Counter
-                        sensorPrefs.setStepCounterEnabled(false)
-                    }
-                    .show()
-                println("✗ ACTIVITY_RECOGNITION permission denied")
-            }
-        }
-    }
-
-    private fun showLogoutDialog() {
-        AlertDialog.Builder(requireContext())
-            .setTitle("Вихід")
-            .setMessage("Ви впевнені що хочете вийти?")
-            .setPositiveButton("Так") { _, _ -> performLogout() }
-            .setNegativeButton("Ні", null)
-            .show()
-    }
-
-    private fun performLogout() {
         if (isMonitoring) {
-            stopMonitoring()
+            // Моніторинг активний
+            binding.tvMonitoringStatus.text = "🟢 ACTIVE"
+            binding.tvMonitoringStatus.setTextColor(
+                ContextCompat.getColor(requireContext(), android.R.color.holo_green_dark)
+            )
+
+            binding.btnStartMonitoring.isEnabled = false
+            binding.btnStopMonitoring.isEnabled = true
+
+        } else {
+            // Моніторинг неактивний
+            binding.tvMonitoringStatus.text = "🔴 INACTIVE"
+            binding.tvMonitoringStatus.setTextColor(
+                ContextCompat.getColor(requireContext(), android.R.color.holo_red_dark)
+            )
+
+            binding.btnStartMonitoring.isEnabled = true
+            binding.btnStopMonitoring.isEnabled = false
         }
-        prefsManager.logout()
-        val intent = Intent(requireContext(), LoginActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        startActivity(intent)
-        requireActivity().finish()
     }
 
-    private fun showExitDialog() {
-        AlertDialog.Builder(requireContext())
-            .setTitle("Закрити додаток")
-            .setMessage("Ви впевнені що хочете закрити додаток?")
-            .setPositiveButton("Так") { _, _ ->
-                if (isMonitoring) {
-                    sensorService.stopMonitoring()
-                }
-                requireActivity().finishAffinity()
-            }
-            .setNegativeButton("Ні", null)
-            .show()
+    /**
+     * Показати статистику збору даних
+     */
+    private fun showCollectionStatistics() {
+        val stats = sensorService.getCollectionStats()
+
+        terminalViewModel.clear()
+        terminalViewModel.addOutput("════════════════════════════════════════")
+        terminalViewModel.addOutput("  📊 COLLECTION STATISTICS")
+        terminalViewModel.addOutput("════════════════════════════════════════")
+        terminalViewModel.addOutput("")
+        terminalViewModel.addOutput("Status:")
+        terminalViewModel.addOutput("  Monitoring: ${if (stats.isMonitoring) "✅ ACTIVE" else "❌ INACTIVE"}")
+        terminalViewModel.addOutput("  Enabled sensors: ${stats.enabledSensorsCount}")
+        terminalViewModel.addOutput("  Current activity: ${stats.currentActivity}")
+        terminalViewModel.addOutput("")
+        terminalViewModel.addOutput("Collection:")
+        terminalViewModel.addOutput("  Total records: ${stats.dataPointsCollected}")
+
+        val minutes = stats.runningTimeMs / 60000
+        val seconds = (stats.runningTimeMs % 60000) / 1000
+        terminalViewModel.addOutput("  Running time: ${minutes}m ${seconds}s")
+        terminalViewModel.addOutput("  Interval: ${stats.aggregationIntervalMs}ms")
+
+        if (stats.runningTimeMs > 0) {
+            val recordsPerMin = (stats.dataPointsCollected.toFloat() / stats.runningTimeMs) * 60000
+            terminalViewModel.addOutput("  Rate: ${String.format("%.1f", recordsPerMin)} records/min")
+        }
+
+        terminalViewModel.addOutput("")
+        terminalViewModel.addOutput("════════════════════════════════════════")
+    }
+
+    /**
+     * Показати статистику буфера
+     */
+    private fun showBufferStatistics() {
+        val stats = sensorService.getBufferStats()
+
+        terminalViewModel.clear()
+        terminalViewModel.addOutput("════════════════════════════════════════")
+        terminalViewModel.addOutput("  🔄 BUFFER STATISTICS")
+        terminalViewModel.addOutput("════════════════════════════════════════")
+        terminalViewModel.addOutput("")
+        terminalViewModel.addOutput("Capacity:")
+        terminalViewModel.addOutput("  Max size: ${stats.capacity} records")
+        terminalViewModel.addOutput("  Current size: ${stats.currentSize} records")
+        terminalViewModel.addOutput("  Fill: ${String.format("%.1f", stats.fillPercentage)}%")
+        terminalViewModel.addOutput("  Status: ${if (stats.isFull) "🔴 FULL" else "🟢 AVAILABLE"}")
+        terminalViewModel.addOutput("")
+        terminalViewModel.addOutput("Time span:")
+        terminalViewModel.addOutput("  Oldest: ${stats.oldestTimestamp}")
+        terminalViewModel.addOutput("  Newest: ${stats.newestTimestamp}")
+        terminalViewModel.addOutput("  Span: ${String.format("%.1f", stats.timeSpanSeconds)}s")
+        terminalViewModel.addOutput("")
+        terminalViewModel.addOutput("ML Inference:")
+        terminalViewModel.addOutput("  Ready: ${if (sensorService.isBufferReadyForInference()) "✅ YES" else "⏳ NO"}")
+        terminalViewModel.addOutput("  Required: 5 records minimum")
+        terminalViewModel.addOutput("")
+        terminalViewModel.addOutput("════════════════════════════════════════")
+    }
+
+    /**
+     * Перевірити необхідні permissions
+     */
+    private fun checkPermissions() {
+        // Activity Recognition для Step Counter
+        if (ContextCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACTIVITY_RECOGNITION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            terminalViewModel.addOutput("⚠️  Activity Recognition permission not granted")
+            terminalViewModel.addOutput("   (Required for Step Counter)")
+        }
+    }
+
+    /**
+     * Запросити Activity Recognition permission
+     */
+    private fun requestActivityRecognitionPermission() {
+        activityRecognitionPermissionLauncher.launch(Manifest.permission.ACTIVITY_RECOGNITION)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        // НЕ зупиняємо сервіс - він живе в MainActivity
         _binding = null
     }
 }
